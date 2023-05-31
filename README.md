@@ -25,4 +25,10 @@
 │       └── (Files - training the ML model)
 ```
 
+<p align="center">
+  <img width="577" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/2f24deb3-8b21-47b7-aade-55d4fdeccc49">
+</p>
+<p align="center">
+  Figure 1: Transition time propagation. a) GBA        b) PBA
+</p>
 
