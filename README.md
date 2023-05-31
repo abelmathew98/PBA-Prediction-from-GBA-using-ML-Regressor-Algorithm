@@ -20,9 +20,9 @@
 │   └── reg2regmaxdf.csv
 ├── Files
 │   └── GBA
-│   │   └── (Files for training the ML model)
+│       └── (Files for training the ML model)
 │   └── PBA
-│   │   └── (Files for training the ML model)
+│       └── (Files for training the ML model)
 ```
 
 
