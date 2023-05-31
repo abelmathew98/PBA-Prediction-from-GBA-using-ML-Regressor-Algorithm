@@ -2,7 +2,7 @@
 ## Directory Structure <br />
 ```bash
 ├── fifo_bkp
-│   ├── Tcl scripts for RTL2GDS flow
+│   ├── Tcl scripts - RTL2GDS flow
 ├── run.sh
 ├── FinalCodeBase
 │   ├── main.py
@@ -12,7 +12,7 @@
 │   └── random_forest_bestmodel_outputs.joblib
 │   └── random_forest_bestmodel_reg2reg.joblib
 ├── Predicted Files 
-│   └── GBA (Files for predicting PBA slack)
+│   └── GBA (Files - predicting PBA slack)
 │   └── PBA (Files to compare the predicted PBA value)
 ├── OutFiles
 │   └── inputsmaxdf.csv
@@ -20,9 +20,9 @@
 │   └── reg2regmaxdf.csv
 ├── Files
 │   └── GBA
-│       └── (Files for training the ML model)
+│       └── (Files - training the ML model)
 │   └── PBA
-│       └── (Files for training the ML model)
+│       └── (Files - training the ML model)
 ```
 
 
