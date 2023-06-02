@@ -1,0 +1,269 @@
+abelmathew98 - INFO - START : Log start
+abelmathew98 - INFO - Reading Parameters from Jsonfile
+abelmathew98 - INFO - Successfully read Parameters from Jsonfile
+abelmathew98 - INFO - GBA - FileParsing inside the path : /Users/abelmathew/Desktop/Grad School Stuff/Semester 2//VDA2/Project/Files/GBA
+abelmathew98 - INFO - GBA - file gba_crossbar_2x2.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_crossbar_2x2.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_dot_product.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_dot_product.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_interleaver.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_interleaver.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_period4_fir.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_period4_fir.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_encoder.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_encoder.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_sipo.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_sipo.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_priority16bit.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_priority16bit.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_convolution_encoder_1.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_convolution_encoder_1.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_decoder.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_decoder.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_mac_wi_sm.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_mac_wi_sm.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_vedic.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_vedic.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_rlc.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_rlc.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_stop_watch.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_stop_watch.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_address_gen.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_address_gen.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_pwm_generator.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_pwm_generator.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_counter_cr.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_counter_cr.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_period8_fir.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_period8_fir.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_adaptive.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_adaptive.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - GBA - file gba_stochastic_bitstream_generator_with_parity_checker.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : gba_stochastic_bitstream_generator_with_parity_checker.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - PBA - FileParsing inside the path : /Users/abelmathew/Desktop/Grad School Stuff/Semester 2//VDA2/Project/Files/GBA
+abelmathew98 - INFO - PBA - file pba_crossbar_2x2.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_crossbar_2x2.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_dot_product.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_dot_product.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_interleaver.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_interleaver.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_period4_fir.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_period4_fir.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_encoder.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_encoder.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_sipo.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_sipo.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_priority16bit.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_priority16bit.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_convolution_encoder_1.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_convolution_encoder_1.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_decoder.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_decoder.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_mac_wi_sm.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_mac_wi_sm.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_vedic.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_vedic.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_rlc.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_rlc.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_stop_watch.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_stop_watch.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_address_gen.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_address_gen.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_pwm_generator.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_pwm_generator.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_counter_cr.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_counter_cr.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_period8_fir.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_period8_fir.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_adaptive.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_adaptive.timing_setup.rpt
+abelmathew98 - INFO - PBA - file pba_stochastic_bitstream_generator_with_parity_checker.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file : pba_stochastic_bitstream_generator_with_parity_checker.timing_setup.rpt
+abelmathew98 - ERROR - Error outputting to CSV : combmaxdf
+abelmathew98 - INFO - Clear: Successfully read the file  IN PATH: /Users/abelmathew/Desktop/Grad School Stuff/Semester 2/VDA2/Project/Prediction Files/GBA/gba_pipo.timing_setup.rpt
+abelmathew98 - INFO - Clear: Successfully read the file  IN PATH: /Users/abelmathew/Desktop/Grad School Stuff/Semester 2/VDA2/Project/Prediction Files/PBA/pba_pipo.timing_setup.rpt
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Clear : Path Length Extractor
+abelmathew98 - INFO - Clear : Cap Sum
+abelmathew98 - INFO - Clear : Fanout Sum
+abelmathew98 - INFO - Prediction: Successful
+abelmathew98 - INFO - END : Log end

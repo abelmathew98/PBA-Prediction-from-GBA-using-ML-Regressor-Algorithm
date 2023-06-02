@@ -1,0 +1,274 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group inputs
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_mac_wi_sm
+Version: P-2019.03-SP5
+Date   : Mon Apr 17 08:53:15 2023
+****************************************
+
+
+  Startpoint: START (input port clocked by CLK)
+  Endpoint: mac_wi_sm_inst_mac_ctrl1_en_mac_reg
+               (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: inputs
+  Path Type: max
+
+  Point                                               Fanout    Cap      Trans       Incr       Path
+  -----------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                               0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                                    1.7078000307 1.7078000307
+  input external delay                                                           0.0799999982 1.7878000289 r
+  START (in)                                                          0.2000000030 0.0000250936 & 1.7878251225 r
+  START (net)                                            1 2510.2092285156 
+  I1025_W_START/PADIO (I1025_EW)                                      0.0000000000 0.0199999809 * 1.8078251034 r
+  I1025_W_START/DOUT (I1025_EW)                                       0.0000000000 0.4799999595 * 2.2878250629 r
+  hvoHier_START (net)                                    4 81.8931503296 
+  U334/A2 (OR2X1_LVT)                                                 0.0000000000 0.0500000119 * 2.3378250748 r
+  U334/Y (OR2X1_LVT)                                                  0.0000000000 0.0799999237 * 2.4178249985 r
+  n276 (net)                                             2 5.4148011208 
+  clock_optctmTdsLR_1_4019/A6 (AO222X1_RVT)                           0.0000000000 0.0000000000 * 2.4178249985 r
+  clock_optctmTdsLR_1_4019/Y (AO222X1_RVT)                            0.0000000000 0.1299998760 * 2.5478248745 r
+  mac_wi_sm_inst_n20 (net)                               1 4.6579337120 
+  mac_wi_sm_inst_mac_ctrl1_en_mac_reg/D (SDFFARX2_HVT)                0.0000000000 0.0000000000 * 2.5478248745 r
+  data arrival time                                                                         2.5478248596
+
+  clock CLK (rise edge)                                               0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                               0.6500212550 * 2.6500212550
+  clock reconvergence pessimism                                                  0.0000000000 2.6500212550
+  mac_wi_sm_inst_mac_ctrl1_en_mac_reg/CLK (SDFFARX2_HVT)                                    2.6500212550 r
+  library setup time                                                             -0.1400000006 * 2.5100212544
+  data required time                                                                        2.5100212097
+  -----------------------------------------------------------------------------------------------------
+  data required time                                                                        2.5100212097
+  data arrival time                                                                         -2.5478248596
+  -----------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                          -0.0378036201
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group output
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_mac_wi_sm
+Version: P-2019.03-SP5
+Date   : Mon Apr 17 08:53:15 2023
+****************************************
+
+
+  Startpoint: mac_wi_sm_inst_mac1_out_qb_regx0x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: ov_flag (output port clocked by CLK)
+  Path Group: output
+  Path Type: max
+
+  Point                                               Fanout    Cap      Trans       Incr       Path
+  -----------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                               0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                               0.6500212550 * 0.6500212550
+  mac_wi_sm_inst_mac1_out_qb_regx0x/CLK (SDFFARX2_LVT)                0.0000000000 0.0000000000 0.6500212550 r
+  mac_wi_sm_inst_mac1_out_qb_regx0x/QN (SDFFARX2_LVT)                 0.0000000000 0.1700000763 * 0.8200213313 r
+  n783 (net)                                             1 9.2735242844 
+  U145/A (INVX8_RVT)                                                  0.0000000000 0.0000000000 * 0.8200213313 r
+  U145/Y (INVX8_RVT)                                                  0.0000000000 0.0299999714 * 0.8500213027 f
+  n965 (net)                                             7 11.1587810516 
+  U201/A2 (NAND2X0_RVT)                                               0.0000000000 0.0000000000 * 0.8500213027 f
+  U201/Y (NAND2X0_RVT)                                                0.0000000000 0.0499999523 * 0.9000212550 r
+  n97 (net)                                              1 0.9806964397 
+  U313/A2 (NAND2X0_LVT)                                               0.0000000000 0.0000000000 * 0.9000212550 r
+  U313/Y (NAND2X0_LVT)                                                0.0000000000 0.0499999523 * 0.9500212073 f
+  n994 (net)                                             1 2.4344325066 
+  U311_roptpi_4053/A1 (XNOR2X2_RVT)                                   0.0000000000 0.0000000000 * 0.9500212073 f
+  U311_roptpi_4053/Y (XNOR2X2_RVT)                                    0.0000000000 0.1300001144 * 1.0800213218 r
+  n1187 (net)                                            2 7.8761954308 
+  U126/A (INVX4_RVT)                                                  0.0000000000 0.0000000000 * 1.0800213218 r
+  U126/Y (INVX4_RVT)                                                  0.0000000000 0.0399999619 * 1.1200212836 f
+  n934 (net)                                             4 8.5932168961 
+  U698/A1 (NAND2X0_RVT)                                               0.0000000000 0.0000000000 * 1.1200212836 f
+  U698/Y (NAND2X0_RVT)                                                0.0000000000 0.0899999142 * 1.2100211978 r
+  n670 (net)                                             2 3.4163789749 
+  U120/A (INVX2_RVT)                                                  0.0000000000 0.0000000000 * 1.2100211978 r
+  U120/Y (INVX2_RVT)                                                  0.0000000000 0.0399999619 * 1.2500211596 f
+  n931 (net)                                             2 3.3509490490 
+  U230/A1 (NAND3X0_RVT)                                               0.0000000000 0.0000000000 * 1.2500211596 f
+  U230/Y (NAND3X0_RVT)                                                0.0000000000 0.0499999523 * 1.3000211120 r
+  n1083 (net)                                            1 1.3157516718 
+  clock_optctmTdsLR_1_3219/A3 (NAND3X0_RVT)                           0.0000000000 0.0000000000 * 1.3000211120 r
+  clock_optctmTdsLR_1_3219/Y (NAND3X0_RVT)                            0.0000000000 0.0900001526 * 1.3900212646 f
+  placeZINV_4_9 (net)                                    1 2.2043347359 
+  U137/A1 (XNOR2X1_LVT)                                               0.0000000000 0.0000000000 * 1.3900212646 f
+  U137/Y (XNOR2X1_LVT)                                                0.0000000000 0.1399998665 * 1.5300211310 r
+  n761 (net)                                             4 9.6260957718 
+  U255/A2 (NAND2X1_RVT)                                               0.0000000000 0.0000000000 * 1.5300211310 r
+  U255/Y (NAND2X1_RVT)                                                0.0000000000 0.0900001526 * 1.6200212836 f
+  n801 (net)                                             2 2.1521768570 
+  U181/A3 (AND3X1_RVT)                                                0.0000000000 0.0000000000 * 1.6200212836 f
+  U181/Y (AND3X1_RVT)                                                 0.0000000000 0.0900001526 * 1.7100214362 f
+  n911 (net)                                             1 2.5965881348 
+  clock_optZINV_123_inst_2654/A (INVX2_RVT)                           0.0000000000 0.0000000000 * 1.7100214362 f
+  clock_optZINV_123_inst_2654/Y (INVX2_RVT)                           0.0000000000 0.0399999619 * 1.7500213981 r
+  clock_optZINV_123_2 (net)                              3 3.8834674358 
+  U546/A1 (NAND2X0_RVT)                                               0.0000000000 0.0000000000 * 1.7500213981 r
+  U546/Y (NAND2X0_RVT)                                                0.0000000000 0.0700001717 * 1.8200215697 f
+  n1035 (net)                                            2 2.6433167458 
+  U236/A4 (AO22X1_RVT)                                                0.0000000000 0.0000000000 * 1.8200215697 f
+  U236/Y (AO22X1_RVT)                                                 0.0000000000 0.0799999237 * 1.9000214934 f
+  n982 (net)                                             1 1.2190575600 
+  U609/A1 (NAND4X0_RVT)                                               0.0000000000 0.0000000000 * 1.9000214934 f
+  U609/Y (NAND4X0_RVT)                                                0.0000000000 0.0599999428 * 1.9600214362 r
+  placeZBUF_2_12 (net)                                   1 2.2754187584 
+  clock_optctmTdsLR_1_4008/A3 (AO21X1_RVT)                            0.0000000000 0.0000000000 * 1.9600214362 r
+  clock_optctmTdsLR_1_4008/Y (AO21X1_RVT)                             0.0000000000 0.0800001621 * 2.0400215983 r
+  n224 (net)                                             1 3.4446349144 
+  clock_optZINV_14_inst_3162/A (IBUFFX32_RVT)                         0.0000000000 0.0000000000 * 2.0400215983 r
+  clock_optZINV_14_inst_3162/Y (IBUFFX32_RVT)                         0.0000000000 0.0800000429 * 2.1200216413 f
+  clock_optZINV_14_1 (net)                               1 90.3202514648 
+  D4I1025_W_ov_flag/DIN (D4I1025_EW)                                  0.0000000000 0.0599999428 * 2.1800215840 f
+  D4I1025_W_ov_flag/PADIO (D4I1025_EW)                                0.0000000000 1.8500000238 * 4.0300216079 f
+  ov_flag (net)                                          1 3769.1469726562 
+  ov_flag (inout)                                                     0.0000000000 0.0000000000 * 4.0300216079 f
+  data arrival time                                                                         4.0300216675
+
+  clock CLK (rise edge)                                               0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                                    1.7078000307 3.7078000307
+  clock reconvergence pessimism                                                  0.0000000000 3.7078000307
+  output external delay                                                          -0.1199999973 3.5878000334
+  data required time                                                                        3.5878000259
+  -----------------------------------------------------------------------------------------------------
+  data required time                                                                        3.5878000259
+  data arrival time                                                                         -4.0300216675
+  -----------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                          -0.4422215819
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group reg2reg
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_mac_wi_sm
+Version: P-2019.03-SP5
+Date   : Mon Apr 17 08:53:15 2023
+****************************************
+
+
+  Startpoint: mac_wi_sm_inst_mac1_out_qb_regx0x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: mac_wi_sm_inst_mac1_mac_out_regx7x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Last common pin: clk
+  Path Group: reg2reg
+  Path Type: max
+
+  Point                                               Fanout    Cap      Trans       Incr       Path
+  -----------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                               0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                               0.6500212550 * 0.6500212550
+  mac_wi_sm_inst_mac1_out_qb_regx0x/CLK (SDFFARX2_LVT)                0.0000000000 0.0000000000 0.6500212550 r
+  mac_wi_sm_inst_mac1_out_qb_regx0x/QN (SDFFARX2_LVT)                 0.0000000000 0.1700000763 * 0.8200213313 r
+  n783 (net)                                             1 9.2735242844 
+  U145/A (INVX8_RVT)                                                  0.0000000000 0.0000000000 * 0.8200213313 r
+  U145/Y (INVX8_RVT)                                                  0.0000000000 0.0299999714 * 0.8500213027 f
+  n965 (net)                                             7 11.1587810516 
+  U201/A2 (NAND2X0_RVT)                                               0.0000000000 0.0000000000 * 0.8500213027 f
+  U201/Y (NAND2X0_RVT)                                                0.0000000000 0.0499999523 * 0.9000212550 r
+  n97 (net)                                              1 0.9806964397 
+  U313/A2 (NAND2X0_LVT)                                               0.0000000000 0.0000000000 * 0.9000212550 r
+  U313/Y (NAND2X0_LVT)                                                0.0000000000 0.0499999523 * 0.9500212073 f
+  n994 (net)                                             1 2.4344325066 
+  U311_roptpi_4053/A1 (XNOR2X2_RVT)                                   0.0000000000 0.0000000000 * 0.9500212073 f
+  U311_roptpi_4053/Y (XNOR2X2_RVT)                                    0.0000000000 0.1299999952 * 1.0800212026 r
+  n1187 (net)                                            2 7.8761954308 
+  U126/A (INVX4_RVT)                                                  0.0000000000 0.0000000000 * 1.0800212026 r
+  U126/Y (INVX4_RVT)                                                  0.0000000000 0.0399999619 * 1.1200211644 f
+  n934 (net)                                             4 8.5932168961 
+  U698/A1 (NAND2X0_RVT)                                               0.0000000000 0.0000000000 * 1.1200211644 f
+  U698/Y (NAND2X0_RVT)                                                0.0000000000 0.0900000334 * 1.2100211978 r
+  n670 (net)                                             2 3.4163789749 
+  U120/A (INVX2_RVT)                                                  0.0000000000 0.0000000000 * 1.2100211978 r
+  U120/Y (INVX2_RVT)                                                  0.0000000000 0.0399999619 * 1.2500211596 f
+  n931 (net)                                             2 3.3509490490 
+  U230/A1 (NAND3X0_RVT)                                               0.0000000000 0.0000000000 * 1.2500211596 f
+  U230/Y (NAND3X0_RVT)                                                0.0000000000 0.0499999523 * 1.3000211120 r
+  n1083 (net)                                            1 1.3157516718 
+  clock_optctmTdsLR_1_3219/A3 (NAND3X0_RVT)                           0.0000000000 0.0000000000 * 1.3000211120 r
+  clock_optctmTdsLR_1_3219/Y (NAND3X0_RVT)                            0.0000000000 0.0900000334 * 1.3900211453 f
+  placeZINV_4_9 (net)                                    1 2.2043347359 
+  U137/A1 (XNOR2X1_LVT)                                               0.0000000000 0.0000000000 * 1.3900211453 f
+  U137/Y (XNOR2X1_LVT)                                                0.0000000000 0.1399999857 * 1.5300211310 r
+  n761 (net)                                             4 9.6260957718 
+  U255/A2 (NAND2X1_RVT)                                               0.0000000000 0.0000000000 * 1.5300211310 r
+  U255/Y (NAND2X1_RVT)                                                0.0000000000 0.0900000334 * 1.6200211644 f
+  n801 (net)                                             2 2.1521768570 
+  U181/A3 (AND3X1_RVT)                                                0.0000000000 0.0000000000 * 1.6200211644 f
+  U181/Y (AND3X1_RVT)                                                 0.0000000000 0.0900000334 * 1.7100211978 f
+  n911 (net)                                             1 2.5965881348 
+  clock_optZINV_123_inst_2654/A (INVX2_RVT)                           0.0000000000 0.0000000000 * 1.7100211978 f
+  clock_optZINV_123_inst_2654/Y (INVX2_RVT)                           0.0000000000 0.0399999619 * 1.7500211596 r
+  clock_optZINV_123_2 (net)                              3 3.8834674358 
+  U573/A1 (NAND2X0_RVT)                                               0.0000000000 0.0000000000 * 1.7500211596 r
+  U573/Y (NAND2X0_RVT)                                                0.0000000000 0.0700001717 * 1.8200213313 f
+  n684 (net)                                             2 2.8750987053 
+  placeZBUF_5_inst_85/A (NBUFFX2_RVT)                                 0.0000000000 0.0000000000 * 1.8200213313 f
+  placeZBUF_5_inst_85/Y (NBUFFX2_RVT)                                 0.0000000000 0.0799999237 * 1.9000212550 f
+  placeZBUF_5_9 (net)                                    2 3.0653605461 
+  clock_optctmTdsLR_3_4000/A (INVX0_RVT)                              0.0000000000 0.0000000000 * 1.9000212550 f
+  clock_optctmTdsLR_3_4000/Y (INVX0_RVT)                              0.0000000000 0.0299999714 * 1.9300212264 r
+  tmp_net413 (net)                                       1 0.8440605402 
+  clock_optctmTdsLR_2_4044/A1 (NAND2X0_RVT)                           0.0000000000 0.0000000000 * 1.9300212264 r
+  clock_optctmTdsLR_2_4044/Y (NAND2X0_RVT)                            0.0000000000 0.0399999619 * 1.9700211883 f
+  tmp_net432 (net)                                       1 1.2631020546 
+  clock_optctmTdsLR_1_4043/A1 (NAND2X0_HVT)                           0.0000000000 0.0000000000 * 1.9700211883 f
+  clock_optctmTdsLR_1_4043/Y (NAND2X0_HVT)                            0.0000000000 0.0800000429 * 2.0500212312 r
+  tmp_net410 (net)                                       2 1.8513911963 
+  clock_optctmTdsLR_1_3998/A1 (OA222X1_HVT)                           0.0000000000 0.0000000000 * 2.0500212312 r
+  clock_optctmTdsLR_1_3998/Y (OA222X1_HVT)                            0.0000000000 0.2100000381 * 2.2600212693 r
+  n496 (net)                                             2 3.3187515736 
+  U699_roptpi_4052/A1 (AND2X1_HVT)                                    0.0000000000 0.0000000000 * 2.2600212693 r
+  U699_roptpi_4052/Y (AND2X1_HVT)                                     0.0000000000 0.0899999142 * 2.3500211835 r
+  n1171 (net)                                            1 1.0009875298 
+  clock_optctmTdsLR_4_4023/A3 (OA22X1_RVT)                            0.0000000000 0.0000000000 * 2.3500211835 r
+  clock_optctmTdsLR_4_4023/Y (OA22X1_RVT)                             0.0000000000 0.0799999237 * 2.4300211072 r
+  tmp_net422 (net)                                       1 1.5724191666 
+  clock_optctmTdsLR_1_4020/S0 (MUX21X1_RVT)                           0.0000000000 0.0000000000 * 2.4300211072 r
+  clock_optctmTdsLR_1_4020/Y (MUX21X1_RVT)                            0.0000000000 0.1100000143 * 2.5400211215 f
+  mac_wi_sm_inst_n110 (net)                              1 1.8302829266 
+  mac_wi_sm_inst_mac1_mac_out_regx7x/D (SDFFARX2_HVT)                 0.0000000000 0.0000000000 * 2.5400211215 f
+  data arrival time                                                                         2.5400211811
+
+  clock CLK (rise edge)                                               0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                               0.6500212550 * 2.6500212550
+  clock reconvergence pessimism                                                  0.0000000000 2.6500212550
+  mac_wi_sm_inst_mac1_mac_out_regx7x/CLK (SDFFARX2_HVT)                                     2.6500212550 r
+  library setup time                                                             -0.1099999994 * 2.5400212556
+  data required time                                                                        2.5400211811
+  -----------------------------------------------------------------------------------------------------
+  data required time                                                                        2.5400211811
+  data arrival time                                                                         -2.5400211811
+  -----------------------------------------------------------------------------------------------------
+  slack (MET)                                                                               0.0000001341
+
+
+1

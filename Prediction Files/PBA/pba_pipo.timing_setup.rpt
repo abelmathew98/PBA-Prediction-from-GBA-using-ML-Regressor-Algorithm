@@ -1,0 +1,248 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group comb
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_pipo
+Version: P-2019.03-SP5
+Date   : Tue May  9 10:44:45 2023
+****************************************
+
+Warning: The drive-resistance for the timing arc (saed32rvt_ss0p95v125c/IBUFFX32_RVT) clock_optgre_d_INV_32_inst_6961/A-->Y (max rising negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+
+  Startpoint: test_se (input port clocked by CLK)
+  Endpoint: test_so (output port clocked by CLK)
+  Path Group: comb
+  Path Type: max  (recalculated)
+
+  Point                                           Fanout    Cap      Trans       Incr       Path
+  -------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                           0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                                1.5630700588 1.5630700588
+  input external delay                                                       0.0799999982 1.6430700570 r
+  test_se (in)                                                    0.2000000030 0.0000251532 & 1.6430952102 r
+  test_se (net)                                      1 2510.8833007812 
+  I1025_W_test_se/PADIO (I1025_EW)                                0.2004665732 0.0199999809 * 1.6630951911 r
+  I1025_W_test_se/DOUT (I1025_EW)                                 0.3263578713 0.5000000000 * 2.1630951911 r
+  hvoHier_test_se (net)                              4 142.2066192627 
+  U104/A2 (OAI22X2_RVT)                                           0.4540508389 0.1900000572 * 2.3530952483 r
+  U104/Y (OAI22X2_RVT)                                            0.0356976613 0.1299998760 * 2.4830951244 f
+  n358 (net)                                         1 1.6622688770 
+  clock_optgre_d_INV_32_inst_6961/A (IBUFFX32_RVT)                0.0356976613 0.0000000000 * 2.4830951244 f
+  clock_optgre_d_INV_32_inst_6961/Y (IBUFFX32_RVT)                0.0363219492 0.0799999237 * 2.5630950481 r
+  clock_optgre_d_INV_32_0 (net)                      1 105.4985122681 
+  clock_optgre_d_INV_24_inst_6960/A (INVX32_RVT)                  0.1399368644 0.0799999237 * 2.6430949718 r
+  clock_optgre_d_INV_24_inst_6960/Y (INVX32_RVT)                  0.0854936317 0.0299999714 * 2.6730949432 f
+  clock_optgre_d_INV_24_0 (net)                      1 84.7184371948 
+  D4I1025_W_test_so/DIN (D4I1025_EW)                              0.1378026307 0.0599999428 * 2.7330948859 f
+  D4I1025_W_test_so/PADIO (D4I1025_EW)                            2.1321067810 1.8599998951 * 4.5930947810 f
+  test_so (net)                                      1 3769.1469726562 
+  test_so (inout)                                                 2.1321067810 0.0000000000 * 4.5930947810 f
+  data arrival time                                                                     4.5930948257
+
+  clock CLK (rise edge)                                           0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                                1.5630700588 3.5630700588
+  clock reconvergence pessimism                                              0.0000000000 3.5630700588
+  output external delay                                                      -0.1199999973 3.4430700615
+  data required time                                                                    3.4430701733
+  -------------------------------------------------------------------------------------------------
+  data required time                                                                    3.4430701733
+  data arrival time                                                                     -4.5930948257
+  -------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                      -1.1500247717
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group inputs
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_pipo
+Version: P-2019.03-SP5
+Date   : Tue May  9 10:44:45 2023
+****************************************
+
+
+  Startpoint: test_se (input port clocked by CLK)
+  Endpoint: pipo_inst_temp_data_regx7x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: inputs
+  Path Type: max  (recalculated)
+
+  Point                                       Fanout    Cap      Trans       Incr       Path
+  ---------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                            1.5630700588 1.5630700588
+  input external delay                                                   0.0799999982 1.6430700570 r
+  test_se (in)                                                0.2000000030 0.0000251532 & 1.6430952102 r
+  test_se (net)                                  1 2510.8833007812 
+  I1025_W_test_se/PADIO (I1025_EW)                            0.2004665732 0.0199999809 * 1.6630951911 r
+  I1025_W_test_se/DOUT (I1025_EW)                             0.3263578713 0.5000000000 * 2.1630951911 r
+  hvoHier_test_se (net)                          4 142.2066192627 
+  U188/A (NBUFFX2_HVT)                                        0.4541732669 0.1900000572 * 2.3530952483 r
+  U188/Y (NBUFFX2_HVT)                                        0.1021437347 0.2000000477 * 2.5530952960 r
+  n387 (net)                                     2 5.3441100121 
+  clock_optgre_mt_inst_6948/A (NBUFFX4_HVT)                   0.1021439582 0.0000000000 * 2.5530952960 r
+  clock_optgre_mt_inst_6948/Y (NBUFFX4_HVT)                   0.1049823090 0.1500000954 * 2.7030953914 r
+  gre_net_134 (net)                             13 32.6355934143 
+  placeZBUF_56_inst_97/A (NBUFFX2_HVT)                        0.1054407433 0.0000000000 * 2.7030953914 r
+  placeZBUF_56_inst_97/Y (NBUFFX2_HVT)                        0.1022945046 0.1500000954 * 2.8530954868 r
+  placeZBUF_56_0 (net)                           7 16.1256656647 
+  pipo_inst_temp_data_regx7x/SE (SDFFARX2_HVT)                0.1023153812 0.0000000000 * 2.8530954868 r
+  data arrival time                                                                 2.8530955315
+
+  clock CLK (rise edge)                                       0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                       0.9700201154 * 2.9700201154
+  clock reconvergence pessimism                                          0.0000000000 2.9700201154
+  pipo_inst_temp_data_regx7x/CLK (SDFFARX2_HVT)                                     2.9700201154 r
+  library setup time                                                     -0.2300000042 * 2.7400201112
+  data required time                                                                2.7400200367
+  ---------------------------------------------------------------------------------------------
+  data required time                                                                2.7400200367
+  data arrival time                                                                 -2.8530955315
+  ---------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                  -0.1130753756
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group output
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_pipo
+Version: P-2019.03-SP5
+Date   : Tue May  9 10:44:45 2023
+****************************************
+
+Warning: The drive-resistance for the timing arc (saed32rvt_ss0p95v125c/NBUFFX32_RVT) placeBUFT_RR_18/A-->Y (max rising positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+
+  Startpoint: pipo_inst_data_out_regx11x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: data_out[11]
+               (output port clocked by CLK)
+  Path Group: output
+  Path Type: max  (recalculated)
+
+  Point                                        Fanout    Cap      Trans       Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                        0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                        0.9300201535 * 0.9300201535
+  pipo_inst_data_out_regx11x/CLK (SDFFARX2_LVT)                0.0916267931 0.0000000000 0.9300201535 r
+  pipo_inst_data_out_regx11x/QN (SDFFARX2_LVT)                 0.0618011504 0.1500000358 * 1.0800201893 r
+  n402 (net)                                      1 7.7515187263 
+  placeBUFT_RR_18/A (NBUFFX32_RVT)                             0.0618031994 0.0000000000 * 1.0800201893 r
+  placeBUFT_RR_18/Y (NBUFFX32_RVT)                             0.0396926180 0.0700000525 * 1.1500202417 r
+  BUF_net_18 (net)                                1 108.6589584351 
+  U172/A (INVX32_RVT)                                          0.1766140908 0.1100000143 * 1.2600202560 r
+  U172/Y (INVX32_RVT)                                          0.1001273915 0.0299999714 * 1.2900202274 f
+  n227 (net)                                      1 85.1136703491 
+  U272/A (INVX32_RVT)                                          0.1562543660 0.0700000525 * 1.3600202799 f
+  U272/Y (INVX32_RVT)                                          0.0944660604 0.0499999523 * 1.4100202322 r
+  n181 (net)                                      1 86.4902191162 
+  placeBINV_R_82/A (INVX32_RVT)                                0.1520786732 0.0700000525 * 1.4800202847 r
+  placeBINV_R_82/Y (INVX32_RVT)                                0.0899858773 0.0299999714 * 1.5100202560 f
+  BUF_net_82 (net)                                1 80.8362350464 
+  placeBINV_R_81/A (INVX32_RVT)                                0.1369119585 0.0599999428 * 1.5700201988 f
+  placeBINV_R_81/Y (INVX32_RVT)                                0.0856607035 0.0499999523 * 1.6200201511 r
+  BUF_net_81 (net)                                1 123.7574005127 
+  placeBINV_R_30/A (INVX32_RVT)                                0.1961550117 0.1100000143 * 1.7300201654 r
+  placeBINV_R_30/Y (INVX32_RVT)                                0.1071155742 0.0299999714 * 1.7600201368 f
+  BUF_net_30 (net)                                1 77.5682754517 
+  D4I1025_S_data_outx11x/DIN (D4I1025_NS)                      0.1382587105 0.0499999523 * 1.8100200891 f
+  D4I1025_S_data_outx11x/PADIO (D4I1025_NS)                    2.1321091652 1.8600000143 * 3.6700201035 f
+  data_out[11] (net)                              1 3769.1469726562 
+  data_out[11] (inout)                                         2.1321091652 0.0000000000 * 3.6700201035 f
+  data arrival time                                                                  3.6700201035
+
+  clock CLK (rise edge)                                        0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                             1.5630700588 3.5630700588
+  clock reconvergence pessimism                                           0.0000000000 3.5630700588
+  output external delay                                                   -0.1199999973 3.4430700615
+  data required time                                                                 3.4430701733
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                 3.4430701733
+  data arrival time                                                                  -3.6700201035
+  ----------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                   -0.2269500494
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group reg2reg
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_pipo
+Version: P-2019.03-SP5
+Date   : Tue May  9 10:44:45 2023
+****************************************
+
+
+  Startpoint: pipo_inst_temp_data_regx9x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: pipo_inst_data_out_regx10x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Last common pin: clk
+  Path Group: reg2reg
+  Path Type: max  (recalculated)
+
+  Point                                        Fanout    Cap      Trans       Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                        0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                        0.9700201154 * 0.9700201154
+  pipo_inst_temp_data_regx9x/CLK (SDFFARX2_HVT)                0.0933746994 0.0000000000 0.9700201154 r
+  pipo_inst_temp_data_regx9x/Q (SDFFARX2_HVT)                  0.0619893633 0.3299999833 * 1.3000200987 r
+  n359 (net)                                      2 4.6714472771 
+  placeZBUF_9_inst_381/A (NBUFFX2_HVT)                         0.0619895943 0.0000000000 * 1.3000200987 r
+  placeZBUF_9_inst_381/Y (NBUFFX2_HVT)                         0.0555396192 0.1000000238 * 1.4000201225 r
+  placeZBUF_9_1 (net)                             2 6.8507385254 
+  U42/A2 (AO22X1_HVT)                                          0.0555406176 0.0000000000 * 1.4000201225 r
+  U42/Y (AO22X1_HVT)                                           0.0694999918 0.1599999666 * 1.5600200891 r
+  n206 (net)                                      1 3.5310850143 
+  pipo_inst_data_out_regx10x/D (SDFFARX2_LVT)                  0.0695001110 0.0000000000 * 1.5600200891 r
+  data arrival time                                                                  1.5600200891
+
+  clock CLK (rise edge)                                        0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                        0.9300201535 * 2.9300201535
+  clock reconvergence pessimism                                           0.0000000000 2.9300201535
+  pipo_inst_data_out_regx10x/CLK (SDFFARX2_LVT)                                      2.9300201535 r
+  library setup time                                                      -0.1199999973 * 2.8100201562
+  data required time                                                                 2.8100202084
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                 2.8100202084
+  data arrival time                                                                  -1.5600200891
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                        1.2500001192
+
+
+1

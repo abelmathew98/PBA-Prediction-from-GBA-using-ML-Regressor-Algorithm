@@ -1,0 +1,134 @@
+#!/bin/tcsh -f
+
+#change the design name here. Keep it the same as the top module name in your sys verilog or verilog file
+setenv DESIGN_NAME <DESIGN_NAME> 
+#Add the design home directory for your project
+setenv DESIGN_HOME /home/class/<username>/project/${DESIGN_NAME}
+setenv DC_DIR ${DESIGN_HOME}/pnr/dc
+setenv DP_DIR ${DESIGN_HOME}/per/dp
+setenv DCTOPO_DIR ${DESIGN_HOME}/pnr/dc_topo
+setenv PT_DIR ${DESIGN_HOME}/sta
+
+setenv X_LEN 4000.00
+setenv Y_LEN 4000.00
+
+#Folder path to the scripts
+set SRC_DIR=/home/class/<username>/da2/project/RTL2GDSscripts
+
+mkdir ${DESIGN_HOME}
+mkdir ${DESIGN_HOME}/pnr
+mkdir ${DESIGN_HOME}/sta
+mkdir ${DC_DIR}
+mkdir ${DP_DIR}
+mkdir ${DCTOPO_DIR}
+
+#synthesis
+mkdir ${DC_DIR}/inputs
+mkdir ${DC_DIR}/inputs/rtl
+mkdir ${DC_DIR}/inputs/constraints
+mkdir ${DC_DIR}/inputs/switching_activity
+
+#RTL file copy (assuming file is in the main directory and the name is <DESIGN_NAME>.v)
+
+cp ${DESIGN_NAME}.v ${DC_DIR}/inputs/rtl/
+cp ${SRC_DIR}/pnr/dc/inputs/constraints/fifo.constraints.tcl ${DC_DIR}/inputs/constraints/${DESIGN_NAME}.constraints.tcl
+cp ${SRC_DIR}/pnr/dc/inputs/switching_activity/fifo.switching_activity.tcl ${DC_DIR}/inputs/switching_activity/${DESIGN_NAME}.switching_activity.tcl
+cp ${SRC_DIR}/pnr/dc/.synopsys_dc.setup ${DC_DIR}/.synopsys_dc.setup
+cp -rf ${SRC_DIR}/pnr/dc/scripts/ ${DC_DIR}/
+
+cd ${DC_DIR}
+echo "Starting synthesis..."
+dc_shell -64 -f ${DC_DIR}/scripts/dc_flow.tcl
+echo "Synthesis done"
+
+cd ${DESIGN_HOME}/pnr
+
+#floorplanning 
+mkdir ${DP_DIR}/inputs
+mkdir ${DP_DIR}/scripts
+
+cd ${DP_DIR}
+cp ${SRC_DIR}/pnr/dp/.synopsys_dc.setup ${DP_DIR}/.synopsys_dc.setup
+
+cd ${DP_DIR}/inputs
+rm -rf *
+ln -s ${DC_DIR}/outputs/${DESIGN_NAME}.vg ${DESIGN_NAME}_syn.vg
+ln -s ${DC_DIR}/outputs/${DESIGN_NAME}.sdc ${DESIGN_NAME}_syn.sdc
+ln -s ${DC_DIR}/outputs/${DESIGN_NAME}.scan.def ${DESIGN_NAME}_syn.scan.def
+
+cd ${DP_DIR}
+cp -rf ${SRC_DIR}/pnr/dp/scripts/ ${DP_DIR}/
+
+echo "Creating NDMs..."
+lm_shell -f scripts/ndm_creation_flow.tcl
+echo "Closing LM shell..."
+
+cp -rf ${SRC_DIR}/pnr/dp/scripts/ ${DP_DIR}/
+echo "Starting floorplanning..."
+icc2_shell -f ${DP_DIR}/scripts/icc2_floorplan_placement_updated.tcl
+echo "Floorplanning done"
+
+#DC Topological run
+mkdir ${DCTOPO_DIR}
+cd ${DCTOPO_DIR}
+mkdir ${DCTOPO_DIR}/inputs
+mkdir ${DCTOPO_DIR}/inputs/constraints
+mkdir ${DCTOPO_DIR}/inputs/switching_activity
+mkdir ${DCTOPO_DIR}/inputs/rtl
+mkdir ${DCTOPO_DIR}/inputs/DEF
+
+cp -rf ${SRC_DIR}/pnr/dc_topo/scripts/ ${DCTOPO_DIR}/
+cp ${SRC_DIR}/pnr/dc_topo/.synopsys_dc.setup ${DCTOPO_DIR}/.synopsys_dc.setup
+cd ${DCTOPO_DIR}/inputs/rtl
+rm -rf ${DCTOPO_DIR}/inputs/rtl/*
+ln -s ${DP_DIR}/outputs/${DESIGN_NAME}.PostFloorplan.v
+cd ${DCTOPO_DIR}/inputs/constraints
+rm -rf ${DCTOPO_DIR}/inputs/constraints/*
+ln -s ${DC_DIR}/inputs/constraints/${DESIGN_NAME}.constraints.tcl 
+cd ${DCTOPO_DIR}/inputs/switching_activity
+rm -rf ${DCTOPO_DIR}/inputs/switching_activity/*
+ln -s ${DC_DIR}/inputs/switching_activity/${DESIGN_NAME}.switching_activity.tcl
+cd ${DCTOPO_DIR}/inputs/DEF
+rm -rf ${DCTOPO_DIR}/inputs/DEF/*
+ln -s ${DP_DIR}/outputs/${DESIGN_NAME}.PostFloorplan.DEF
+
+cd ${DCTOPO_DIR}
+
+echo "Starting DC Topological run..."
+dc_shell -topo -64 -f ${DCTOPO_DIR}/scripts/dc_topo_flow_updated.tcl
+echo "Finished DC Topological run"
+
+#Place and Route
+cd ${DP_DIR}/inputs
+rm -rf *
+ln -s ${DP_DIR}/outputs/${DESIGN_NAME}.PostFloorplan_full.DEF
+ln -s ${DCTOPO_DIR}/outputs/${DESIGN_NAME}.scan.def ${DESIGN_NAME}_syn.scan.def
+ln -s ${DCTOPO_DIR}/outputs/${DESIGN_NAME}.sdc ${DESIGN_NAME}_syn.sdc
+ln -s ${DCTOPO_DIR}/outputs/${DESIGN_NAME}.vg ${DESIGN_NAME}_syn.vg
+ln -s ${DCTOPO_DIR}/outputs/${DESIGN_NAME}.saif
+
+cd ${DP_DIR}
+
+echo "Starting Place and Route..."
+icc2_shell -f ${DP_DIR}/scripts/icc2_place_clock_route_updated.tcl
+echo "Place and Route done"
+
+#STA
+cd ${PT_DIR}
+mkdir ${PT_DIR}/inputs
+cp -rf ${SRC_DIR}/sta/scripts/ ${PT_DIR}/
+cp ${SRC_DIR}/sta/.synopsys_pt.setup ${PT_DIR}/.synopsys_pt.setup
+cd ${PT_DIR}/inputs
+rm -rf *
+ln -s ${DP_DIR}/outputs/${DESIGN_NAME}.sdf
+ln -s ${DP_DIR}/outputs/${DESIGN_NAME}.saif
+ln -s ${DP_DIR}/outputs/${DESIGN_NAME}.sdc
+ln -s ${DP_DIR}/outputs/${DESIGN_NAME}.v ${DESIGN_NAME}.vg
+ln -s ${DP_DIR}/outputs/${DESIGN_NAME}.spef.full_chip_${DESIGN_NAME}.saed32nm_1p9m_Cmax.tluplus_125.spef.gz ${DESIGN_NAME}.spef.max.gz
+ln -s ${DP_DIR}/outputs/${DESIGN_NAME}.spef.full_chip_${DESIGN_NAME}.saed32nm_1p9m_Cmin.tluplus_125.spef.gz ${DESIGN_NAME}.spef.min.gz
+
+cd ${PT_DIR}
+
+echo "Starting PT..."
+pt_shell -f ${PT_DIR}/scripts/pt_flow.tcl
+echo "STA done"

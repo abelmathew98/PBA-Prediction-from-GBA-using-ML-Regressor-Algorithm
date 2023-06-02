@@ -1,0 +1,172 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group inputs
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_sipo
+Version: P-2019.03-SP5
+Date   : Sun Apr 23 01:19:07 2023
+****************************************
+
+
+  Startpoint: rst (input port clocked by CLK)
+  Endpoint: sipo_inst_q_regx9x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: inputs
+  Path Type: max  (recalculated)
+
+  Point                              Fanout    Cap      Trans       Incr       Path
+  ------------------------------------------------------------------------------------
+  clock CLK (rise edge)                              0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                   1.3546799421 1.3546799421
+  input external delay                                          0.0799999982 1.4346799403 r
+  rst (in)                                           0.2000000030 0.0000251532 & 1.4347050935 r
+  rst (net)                             1 2510.5585937500 
+  I1025_W_rst/PADIO (I1025_EW)                       0.2003564388 0.0199999809 * 1.4547050744 r
+  I1025_W_rst/DOUT (I1025_EW)                        0.3064016700 0.4900000095 * 1.9447050840 r
+  hvoHier_rst (net)                    13 108.7848052979 
+  U69/A (INVX0_HVT)                                  0.3648413420 0.1200000048 * 2.0647050887 r
+  U69/Y (INVX0_HVT)                                  0.2131916881 0.2100000381 * 2.2747051269 f
+  n49 (net)                             1 4.8665628433 
+  U43/A1 (AND2X1_HVT)                                0.2131918967 0.0000000000 * 2.2747051269 f
+  U43/Y (AND2X1_HVT)                                 0.0761672482 0.1700000763 * 2.4447052032 f
+  n208 (net)                            1 3.7008838654 
+  sipo_inst_q_regx9x/D (SDFFARX2_LVT)                0.0761674866 0.0000000000 * 2.4447052032 f
+  data arrival time                                                        2.4447052479
+
+  clock CLK (rise edge)                              0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                              0.7000191808 * 2.7000191808
+  clock reconvergence pessimism                                 0.0000000000 2.7000191808
+  sipo_inst_q_regx9x/CLK (SDFFARX2_LVT)                                    2.7000191808 r
+  library setup time                                            -0.1099999994 * 2.5900191814
+  data required time                                                       2.5900192261
+  ------------------------------------------------------------------------------------
+  data required time                                                       2.5900192261
+  data arrival time                                                        -2.4447052479
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                              0.1453139782
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group output
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_sipo
+Version: P-2019.03-SP5
+Date   : Sun Apr 23 01:19:07 2023
+****************************************
+
+
+  Startpoint: sipo_inst_q_regx10x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: q[10] (output port clocked by CLK)
+  Path Group: output
+  Path Type: max  (recalculated)
+
+  Point                                            Fanout    Cap      Trans       Incr       Path
+  --------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                            0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                            0.7000191808 * 0.7000191808
+  sipo_inst_q_regx10x/CLK (SDFFARX2_RVT)                           0.2616416216 0.0000000000 0.7000191808 r
+  sipo_inst_q_regx10x/QN (SDFFARX2_RVT)                            0.0433958396 0.1800000072 * 0.8800191879 r
+  net_net_3 (net)                                     1 1.4780591726 
+  clock_optgre_d_INV_317_inst_4367/A (IBUFFX32_RVT)                0.0433958396 0.0000000000 * 0.8800191879 r
+  clock_optgre_d_INV_317_inst_4367/Y (IBUFFX32_RVT)                0.0347944014 0.0799999833 * 0.9600191712 f
+  clock_optgre_d_INV_317_0 (net)                      1 39.3141021729 
+  clock_optgre_d_BUF_215_inst_4366/A (NBUFFX32_RVT)                0.0442784503 0.0199999809 * 0.9800191522 f
+  clock_optgre_d_BUF_215_inst_4366/Y (NBUFFX32_RVT)                0.0371812321 0.0600000024 * 1.0400191545 f
+  clock_optgre_d_BUF_215_0 (net)                      1 80.4691467285 
+  clock_optgre_d_BUF_101_inst_4365/A (NBUFFX32_RVT)                0.1052173153 0.0599999428 * 1.1000190973 f
+  clock_optgre_d_BUF_101_inst_4365/Y (NBUFFX32_RVT)                0.0534950681 0.0900000334 * 1.1900191307 f
+  clock_optgre_d_BUF_101_0 (net)                      1 82.6876068115 
+  clock_optgre_d_BUF_33_inst_4364/A (NBUFFX32_RVT)                 0.1064464971 0.0599999428 * 1.2500190735 f
+  clock_optgre_d_BUF_33_inst_4364/Y (NBUFFX32_RVT)                 0.0528038368 0.0900000334 * 1.3400191069 f
+  clock_optgre_d_BUF_33_0 (net)                       1 78.2931518555 
+  D4I1025_E_qx10x/DIN (D4I1025_EW)                                 0.1057070866 0.0499999523 * 1.3900190592 f
+  D4I1025_E_qx10x/PADIO (D4I1025_EW)                               2.1319358349 1.8400000334 * 3.2300190926 f
+  q[10] (net)                                         1 3769.1469726562 
+  q[10] (inout)                                                    2.1319358349 0.0000000000 * 3.2300190926 f
+  data arrival time                                                                      3.2300190926
+
+  clock CLK (rise edge)                                            0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                                 1.3546799421 3.3546799421
+  clock reconvergence pessimism                                               0.0000000000 3.3546799421
+  output external delay                                                       -0.1199999973 3.2346799448
+  data required time                                                                     3.2346799374
+  --------------------------------------------------------------------------------------------------
+  data required time                                                                     3.2346799374
+  data arrival time                                                                      -3.2300190926
+  --------------------------------------------------------------------------------------------------
+  slack (MET)                                                                            0.0046608523
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group reg2reg
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_sipo
+Version: P-2019.03-SP5
+Date   : Sun Apr 23 01:19:07 2023
+****************************************
+
+
+  Startpoint: sipo_inst_q_regx5x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: sipo_inst_q_regx6x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Last common pin: clk
+  Path Group: reg2reg
+  Path Type: max  (recalculated)
+
+  Point                                Fanout    Cap      Trans       Incr       Path
+  --------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                0.7000191808 * 0.7000191808
+  sipo_inst_q_regx5x/CLK (SDFFARX2_HVT)                0.2615427077 0.0000000000 0.7000191808 r
+  sipo_inst_q_regx5x/Q (SDFFARX2_HVT)                  0.0701502413 0.4100000262 * 1.1100192070 r
+  hvoHier_q[5] (net)                      2 6.6104388237 
+  U47/A1 (AND2X1_HVT)                                  0.0701509491 0.0000000000 * 1.1100192070 r
+  U47/Y (AND2X1_HVT)                                   0.0647465140 0.1100000143 * 1.2200192213 r
+  n210 (net)                              1 4.4490556717 
+  sipo_inst_q_regx6x/D (SDFFARX2_LVT)                  0.0647470281 0.0000000000 * 1.2200192213 r
+  data arrival time                                                          1.2200192213
+
+  clock CLK (rise edge)                                0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                0.7000191808 * 2.7000191808
+  clock reconvergence pessimism                                   0.0000000000 2.7000191808
+  sipo_inst_q_regx6x/CLK (SDFFARX2_LVT)                                      2.7000191808 r
+  library setup time                                              -0.1299999952 * 2.5700191855
+  data required time                                                         2.5700192451
+  --------------------------------------------------------------------------------------
+  data required time                                                         2.5700192451
+  data arrival time                                                          -1.2200192213
+  --------------------------------------------------------------------------------------
+  slack (MET)                                                                1.3499999046
+
+
+1

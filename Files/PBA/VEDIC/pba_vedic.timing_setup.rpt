@@ -1,0 +1,201 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group inputs
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_vedic
+Version: P-2019.03-SP5
+Date   : Tue May  2 22:28:34 2023
+****************************************
+
+
+  Startpoint: test_se (input port clocked by CLK)
+  Endpoint: vedic_inst_dividend_in_regx0x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: inputs
+  Path Type: max  (recalculated)
+
+  Point                                          Fanout    Cap      Trans       Incr       Path
+  ------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                          0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                               1.2274199724 1.2274199724
+  input external delay                                                      0.0799999982 1.3074199706 r
+  test_se (in)                                                   0.2000000030 0.0000251532 & 1.3074451238 r
+  test_se (net)                                     1 2509.8659667969 
+  I1025_W_test_se/PADIO (I1025_EW)                               0.2000000030 0.0199999809 * 1.3274451047 r
+  I1025_W_test_se/DOUT (I1025_EW)                                0.2730502188 0.4900000095 * 1.8174451143 r
+  hvoHier_test_se (net)                            19 91.3570022583 
+  vedic_inst_dividend_in_regx0x/SE (SDFFARX2_HVT)                0.2829128504 0.0499999523 * 1.8674450666 r
+  data arrival time                                                                    1.8674451113
+
+  clock CLK (rise edge)                                          0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                          0.6600207686 * 2.6600207686
+  clock reconvergence pessimism                                             0.0000000000 2.6600207686
+  vedic_inst_dividend_in_regx0x/CLK (SDFFARX2_HVT)                                     2.6600207686 r
+  library setup time                                                        -0.3000000119 * 2.3600207567
+  data required time                                                                   2.3600206375
+  ------------------------------------------------------------------------------------------------
+  data required time                                                                   2.3600206375
+  data arrival time                                                                    -1.8674451113
+  ------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.4925757051
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group output
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_vedic
+Version: P-2019.03-SP5
+Date   : Tue May  2 22:28:34 2023
+****************************************
+
+Warning: The drive-resistance for the timing arc (saed32rvt_ss0p95v125c/NBUFFX32_RVT) U175/A-->Y (max falling positive_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+
+  Startpoint: vedic_inst_quotient_regx3x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: quotient[3]
+               (output port clocked by CLK)
+  Path Group: output
+  Path Type: max  (recalculated)
+
+  Point                                        Fanout    Cap      Trans       Incr       Path
+  ----------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                        0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                        0.6600207686 * 0.6600207686
+  vedic_inst_quotient_regx3x/CLK (SDFFARX2_RVT)                0.2579853535 0.0000000000 0.6600207686 r
+  vedic_inst_quotient_regx3x/Q (SDFFARX2_RVT)                  0.0513663627 0.2500000000 * 0.9100207686 f
+  n547 (net)                                      2 6.4397301674 
+  U175/A (NBUFFX32_RVT)                                        0.0513666794 0.0000000000 * 0.9100207686 f
+  U175/Y (NBUFFX32_RVT)                                        0.0366888605 0.0699999928 * 0.9800207615 f
+  net_net_5 (net)                                 1 96.0457916260 
+  clock_optZBUF_12_inst_2524/A (NBUFFX32_RVT)                  0.1423231661 0.0900000334 * 1.0700207949 f
+  clock_optZBUF_12_inst_2524/Y (NBUFFX32_RVT)                  0.0603186861 0.1000000238 * 1.1700208187 f
+  clock_optZBUF_12_0 (net)                        1 84.4280471802 
+  D4I1025_S_quotientx3x/DIN (D4I1025_NS)                       0.1255748570 0.0599999428 * 1.2300207615 f
+  D4I1025_S_quotientx3x/PADIO (D4I1025_NS)                     2.1320416927 1.8500001431 * 3.0800209045 f
+  quotient[3] (net)                               1 3769.1469726562 
+  quotient[3] (inout)                                          2.1320416927 0.0000000000 * 3.0800209045 f
+  data arrival time                                                                  3.0800209045
+
+  clock CLK (rise edge)                                        0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                             1.2274199724 3.2274199724
+  clock reconvergence pessimism                                           0.0000000000 3.2274199724
+  output external delay                                                   -0.1199999973 3.1074199751
+  data required time                                                                 3.1074199677
+  ----------------------------------------------------------------------------------------------
+  data required time                                                                 3.1074199677
+  data arrival time                                                                  -3.0800209045
+  ----------------------------------------------------------------------------------------------
+  slack (MET)                                                                        0.0273990706
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group reg2reg
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_vedic
+Version: P-2019.03-SP5
+Date   : Tue May  2 22:28:34 2023
+****************************************
+
+
+  Startpoint: vedic_inst_divisor_in_regx1x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: vedic_inst_remainder_regx2x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Last common pin: clk
+  Path Group: reg2reg
+  Path Type: max  (recalculated)
+
+  Point                                          Fanout    Cap      Trans       Incr       Path
+  ------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                          0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                          0.6700208187 * 0.6700208187
+  vedic_inst_divisor_in_regx1x/CLK (SDFFARX2_HVT)                0.2576365471 0.0000000000 0.6700208187 r
+  vedic_inst_divisor_in_regx1x/QN (SDFFARX2_HVT)                 0.0799722746 0.3000000119 * 0.9700208306 r
+  n476 (net)                                        3 4.7857332230 
+  U325/A2 (OR2X1_RVT)                                            0.0799723268 0.0000000000 * 0.9700208306 r
+  U325/Y (OR2X1_RVT)                                             0.0375011675 0.0799999833 * 1.0500208139 r
+  n350 (net)                                        1 2.1442956924 
+  U324/A2 (NAND2X1_RVT)                                          0.0375011936 0.0000000000 * 1.0500208139 r
+  U324/Y (NAND2X1_RVT)                                           0.0835544765 0.1200000048 * 1.1700208187 f
+  n91 (net)                                         4 8.1868934631 
+  U109/A2 (NAND2X0_RVT)                                          0.0835549459 0.0000000000 * 1.1700208187 f
+  U109/Y (NAND2X0_RVT)                                           0.1325648874 0.1299999952 * 1.3000208139 r
+  n259 (net)                                        2 4.5402441025 
+  clock_optctmTdsLR_1_3033/A2 (XOR2X2_RVT)                       0.1325649470 0.0000000000 * 1.3000208139 r
+  clock_optctmTdsLR_1_3033/Y (XOR2X2_RVT)                        0.0553132184 0.1499999762 * 1.4500207901 f
+  placeZINV_88_2 (net)                              3 6.4076633453 
+  U276/A2 (OR2X1_RVT)                                            0.0553135984 0.0000000000 * 1.4500207901 f
+  U276/Y (OR2X1_RVT)                                             0.0360124558 0.0700000525 * 1.5200208426 f
+  n341 (net)                                        1 2.2824161053 
+  U303/A1 (XNOR2X2_RVT)                                          0.0360124707 0.0000000000 * 1.5200208426 f
+  U303/Y (XNOR2X2_RVT)                                           0.0429189987 0.1000000238 * 1.6200208664 r
+  n334 (net)                                        2 3.1864488125 
+  U304/A1 (NAND2X0_RVT)                                          0.0429190472 0.0000000000 * 1.6200208664 r
+  U304/Y (NAND2X0_RVT)                                           0.0668195039 0.0599999428 * 1.6800208092 f
+  n337 (net)                                        1 1.9223239422 
+  U306/A2 (AND2X2_RVT)                                           0.0668195188 0.0000000000 * 1.6800208092 f
+  U306/Y (AND2X2_RVT)                                            0.0661102831 0.1200000048 * 1.8000208139 f
+  n338 (net)                                        6 10.5586748123 
+  clock_optctmTdsLR_1_3047/A1 (NAND2X1_RVT)                      0.0661433414 0.0000000000 * 1.8000208139 f
+  clock_optctmTdsLR_1_3047/Y (NAND2X1_RVT)                       0.0413725972 0.1100000143 * 1.9100208282 r
+  n452 (net)                                        2 3.3086740971 
+  U397/A (INVX0_HVT)                                             0.0413726680 0.0000000000 * 1.9100208282 r
+  U397/Y (INVX0_HVT)                                             0.0526030138 0.0499999523 * 1.9600207806 f
+  n131 (net)                                        1 2.0161011219 
+  U355/A3 (XOR3X2_RVT)                                           0.0526030287 0.0000000000 * 1.9600207806 f
+  U355/Y (XOR3X2_RVT)                                            0.1022173837 0.1400001049 * 2.1000208855 r
+  n466 (net)                                        9 17.5590877533 
+  U165/A2 (NAND4X0_HVT)                                          0.1022871658 0.0000000000 * 2.1000208855 r
+  U165/Y (NAND4X0_HVT)                                           0.1377586871 0.1500000954 * 2.2500209808 f
+  n472 (net)                                        1 1.4270930290 
+  clock_optctmTdsLR_2_3093/A1 (NAND2X0_HVT)                      0.1377586871 0.0000000000 * 2.2500209808 f
+  clock_optctmTdsLR_2_3093/Y (NAND2X0_HVT)                       0.0945160612 0.1199998856 * 2.3700208664 r
+  tmp_net37 (net)                                   1 1.6528630257 
+  clock_optctmTdsLR_1_3092/A1 (XNOR3X2_RVT)                      0.0945160612 0.0000000000 * 2.3700208664 r
+  clock_optctmTdsLR_1_3092/Y (XNOR3X2_RVT)                       0.0853292421 0.2200000286 * 2.5900208950 r
+  n314 (net)                                        1 7.9728851318 
+  vedic_inst_remainder_regx2x/D (SDFFARX1_LVT)                   0.0853338614 0.0000000000 * 2.5900208950 r
+  data arrival time                                                                    2.5900208950
+
+  clock CLK (rise edge)                                          0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                          0.6600207686 * 2.6600207686
+  clock reconvergence pessimism                                             0.0000000000 2.6600207686
+  vedic_inst_remainder_regx2x/CLK (SDFFARX1_LVT)                                       2.6600207686 r
+  library setup time                                                        -0.1199999973 * 2.5400207713
+  data required time                                                                   2.5400207043
+  ------------------------------------------------------------------------------------------------
+  data required time                                                                   2.5400207043
+  data arrival time                                                                    -2.5900208950
+  ------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                     -0.0500001237
+
+
+1

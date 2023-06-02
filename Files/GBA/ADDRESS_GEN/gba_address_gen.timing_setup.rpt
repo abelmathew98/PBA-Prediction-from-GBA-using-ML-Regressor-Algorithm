@@ -1,0 +1,256 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group comb
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_address_gen
+Version: P-2019.03-SP5
+Date   : Tue May  2 11:52:27 2023
+****************************************
+
+
+  Startpoint: test_se (input port clocked by CLK)
+  Endpoint: test_so (output port clocked by CLK)
+  Path Group: comb
+  Path Type: max
+
+  Point                                    Fanout    Cap      Trans       Incr       Path
+  ------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                    0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                         1.2454400063 1.2454400063
+  input external delay                                                0.0799999982 1.3254400045 r
+  test_se (in)                                             0.2000000030 0.0000250340 & 1.3254650384 r
+  test_se (net)                               1 2509.1279296875 
+  I1025_W_test_se/PADIO (I1025_EW)                         0.1999999881 0.0000000000 * 1.3254650384 r
+  I1025_W_test_se/DOUT (I1025_EW)                          0.1885257661 0.4500000477 * 1.7754650861 r
+  hvoHier_test_se (net)                       2 12.1496829987 
+  U142/S0 (MUX21X2_LVT)                                    0.1885309070 0.0000000000 * 1.7754650861 r
+  U142/Y (MUX21X2_LVT)                                     0.0694464669 0.1000000238 * 1.8754651099 r
+  n239 (net)                                  1 11.0908737183 
+  clock_optZINV_14_inst_2559/A (INVX16_RVT)                0.0694466010 0.0000000000 * 1.8754651099 r
+  clock_optZINV_14_inst_2559/Y (INVX16_RVT)                0.0691232607 0.0399999619 * 1.9154650718 f
+  clock_optZINV_14_0 (net)                    1 65.2167282104 
+  D4I1025_N_test_so/DIN (D4I1025_NS)                       0.0885532796 0.0299999714 * 1.9454650432 f
+  D4I1025_N_test_so/PADIO (D4I1025_NS)                     2.1318447590 1.8400000334 * 3.7854650766 f
+  test_so (net)                               1 3769.1469726562 
+  test_so (inout)                                          2.1318447590 0.0000000000 * 3.7854650766 f
+  data arrival time                                                              3.7854650021
+
+  clock CLK (rise edge)                                    0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                         1.2454400063 3.2454400063
+  clock reconvergence pessimism                                       0.0000000000 3.2454400063
+  output external delay                                               -0.1199999973 3.1254400089
+  data required time                                                             3.1254401207
+  ------------------------------------------------------------------------------------------
+  data required time                                                             3.1254401207
+  data arrival time                                                              -3.7854650021
+  ------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                               -0.6600250602
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group inputs
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_address_gen
+Version: P-2019.03-SP5
+Date   : Tue May  2 11:52:27 2023
+****************************************
+
+
+  Startpoint: up_down_n (input port clocked by CLK)
+  Endpoint: address_gen_inst_ovflw_reg
+               (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: inputs
+  Path Type: max
+
+  Point                                      Fanout    Cap      Trans       Incr       Path
+  --------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                      0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                           1.2454400063 1.2454400063
+  input external delay                                                  0.0799999982 1.3254400045 r
+  up_down_n (in)                                             0.2000000030 0.0000251532 & 1.3254651576 r
+  up_down_n (net)                               1 2509.9702148438 
+  I1025_W_up_down_n/PADIO (I1025_EW)                         0.2000000030 0.0199999809 * 1.3454651386 r
+  I1025_W_up_down_n/DOUT (I1025_EW)                          0.2468261719 0.4799999595 * 1.8254650980 r
+  hvoHier_up_down_n (net)                      13 62.9153900146 
+  U49/A (INVX0_HVT)                                          0.2513589859 0.0400000215 * 1.8654651195 r
+  U49/Y (INVX0_HVT)                                          0.1181998402 0.1000000238 * 1.9654651433 f
+  n77 (net)                                     1 1.4335212708 
+  U83/A1 (NAND2X0_HVT)                                       0.1181998402 0.0000000000 * 1.9654651433 f
+  U83/Y (NAND2X0_HVT)                                        0.1619441509 0.1599999666 * 2.1254651099 r
+  n200 (net)                                    2 4.7593307495 
+  clock_optctmTdsLR_3_3212/A1 (NAND2X0_HVT)                  0.1619442403 0.0000000000 * 2.1254651099 r
+  clock_optctmTdsLR_3_3212/Y (NAND2X0_HVT)                   0.1033762246 0.0999999046 * 2.2254650146 f
+  tmp_net37 (net)                               1 1.0021892786 
+  clock_optctmTdsLR_1_3210/A2 (AND3X1_RVT)                   0.1033762246 0.0000000000 * 2.2254650146 f
+  clock_optctmTdsLR_1_3210/Y (AND3X1_RVT)                    0.0520793088 0.1099998951 * 2.3354649097 f
+  n195 (net)                                    1 2.0859582424 
+  clock_optctmTdsLR_1_3203/S0 (MUX21X1_RVT)                  0.0520793237 0.0000000000 * 2.3354649097 f
+  clock_optctmTdsLR_1_3203/Y (MUX21X1_RVT)                   0.0578346103 0.1100000143 * 2.4454649240 r
+  n65 (net)                                     2 2.8024420738 
+  clock_optctmTdsLR_1_3207/A1 (OA221X1_HVT)                  0.0578346364 0.0000000000 * 2.4454649240 r
+  clock_optctmTdsLR_1_3207/Y (OA221X1_HVT)                   0.0776308924 0.1800000668 * 2.6254649907 r
+  n212 (net)                                    1 3.0114645958 
+  address_gen_inst_ovflw_reg/D (SDFFARX1_LVT)                0.0776309744 0.0000000000 * 2.6254649907 r
+  data arrival time                                                                2.6254649162
+
+  clock CLK (rise edge)                                      0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                      0.6400192380 * 2.6400192380
+  clock reconvergence pessimism                                         0.0000000000 2.6400192380
+  address_gen_inst_ovflw_reg/CLK (SDFFARX1_LVT)                                    2.6400192380 r
+  library setup time                                                    -0.1199999973 * 2.5200192407
+  data required time                                                               2.5200192928
+  --------------------------------------------------------------------------------------------
+  data required time                                                               2.5200192928
+  data arrival time                                                                -2.6254649162
+  --------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                 -0.1054457501
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group output
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_address_gen
+Version: P-2019.03-SP5
+Date   : Tue May  2 11:52:27 2023
+****************************************
+
+
+  Startpoint: address_gen_inst_count_regx3x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: count[3] (output port clocked by CLK)
+  Path Group: output
+  Path Type: max
+
+  Point                                           Fanout    Cap      Trans       Incr       Path
+  -------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                           0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                           0.7700192332 * 0.7700192332
+  address_gen_inst_count_regx3x/CLK (SDFFARX1_LVT)                0.0554938577 0.0000000000 0.7700192332 r
+  address_gen_inst_count_regx3x/Q (SDFFARX1_LVT)                  0.0464084670 0.1700000763 * 0.9400193095 f
+  n203 (net)                                         2 3.9152395725 
+  U189/A (NBUFFX8_LVT)                                            0.0464085490 0.0000000000 * 0.9400193095 f
+  U189/Y (NBUFFX8_LVT)                                            0.0496428981 0.0599999428 * 1.0000192523 f
+  hvoHier_count[3] (net)                             1 34.2180862427 
+  clock_optZBUF_36_inst_2568/A (NBUFFX32_RVT)                     0.0531929582 0.0099999905 * 1.0100192428 f
+  clock_optZBUF_36_inst_2568/Y (NBUFFX32_RVT)                     0.0379311889 0.0699999332 * 1.0800191760 f
+  clock_optZBUF_36_1 (net)                           1 82.3433685303 
+  clock_optZBUF_14_inst_2567/A (NBUFFX32_RVT)                     0.1129628718 0.0699999332 * 1.1500191092 f
+  clock_optZBUF_14_inst_2567/Y (NBUFFX32_RVT)                     0.0525778644 0.0899999142 * 1.2400190234 f
+  clock_optZBUF_14_1 (net)                           1 85.7230072021 
+  D4I1025_S_countx3x/DIN (D4I1025_NS)                             0.1241079569 0.0700000525 * 1.3100190759 f
+  D4I1025_S_countx3x/PADIO (D4I1025_NS)                           2.1320338249 1.8500000238 * 3.1600190997 f
+  count[3] (net)                                     1 3769.1469726562 
+  count[3] (inout)                                                2.1320338249 0.0000000000 * 3.1600190997 f
+  data arrival time                                                                     3.1600191593
+
+  clock CLK (rise edge)                                           0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                                1.2454400063 3.2454400063
+  clock reconvergence pessimism                                              0.0000000000 3.2454400063
+  output external delay                                                      -0.1199999973 3.1254400089
+  data required time                                                                    3.1254401207
+  -------------------------------------------------------------------------------------------------
+  data required time                                                                    3.1254401207
+  data arrival time                                                                     -3.1600191593
+  -------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                      -0.0345790908
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group reg2reg
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_address_gen
+Version: P-2019.03-SP5
+Date   : Tue May  2 11:52:27 2023
+****************************************
+
+
+  Startpoint: address_gen_inst_count_regx1x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: address_gen_inst_ovflw_reg
+               (rising edge-triggered flip-flop clocked by CLK)
+  Last common pin: clk
+  Path Group: reg2reg
+  Path Type: max
+
+  Point                                           Fanout    Cap      Trans       Incr       Path
+  -------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                           0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                           0.7700192332 * 0.7700192332
+  address_gen_inst_count_regx1x/CLK (SDFFARX2_LVT)                0.0554938577 0.0000000000 0.7700192332 r
+  address_gen_inst_count_regx1x/QN (SDFFARX2_LVT)                 0.0646813437 0.1499999762 * 0.9200192094 r
+  n259 (net)                                         2 8.5052366257 
+  U216/A (NBUFFX2_HVT)                                            0.0646815673 0.0000000000 * 0.9200192094 r
+  U216/Y (NBUFFX2_HVT)                                            0.0990551412 0.1299999952 * 1.0500192046 r
+  address_gen_inst_n98 (net)                         8 15.7592010498 
+  U50/A2 (NAND4X0_HVT)                                            0.0993822515 0.0000000000 * 1.0500192046 r
+  U50/Y (NAND4X0_HVT)                                             0.3095518649 0.2699999213 * 1.3200191259 f
+  n226 (net)                                         2 4.9730825424 
+  U156/A (INVX0_HVT)                                              0.3095518947 0.0000000000 * 1.3200191259 f
+  U156/Y (INVX0_HVT)                                              0.1734444350 0.1700000167 * 1.4900191426 r
+  n148 (net)                                         2 3.8249077797 
+  U83/A2 (NAND2X0_HVT)                                            0.1734444499 0.0000000000 * 1.4900191426 r
+  U83/Y (NAND2X0_HVT)                                             0.2061443329 0.2200000286 * 1.7100191712 f
+  n200 (net)                                         2 4.7642927170 
+  clock_optctmTdsLR_3_3212/A1 (NAND2X0_HVT)                       0.2061444074 0.0000000000 * 1.7100191712 f
+  clock_optctmTdsLR_3_3212/Y (NAND2X0_HVT)                        0.1096674204 0.1200000048 * 1.8300191760 r
+  tmp_net37 (net)                                    1 1.0070052147 
+  clock_optctmTdsLR_1_3210/A2 (AND3X1_RVT)                        0.1096674204 0.0000000000 * 1.8300191760 r
+  clock_optctmTdsLR_1_3210/Y (AND3X1_RVT)                         0.0477448851 0.0900000334 * 1.9200192094 r
+  n195 (net)                                         1 2.0868663788 
+  clock_optctmTdsLR_1_3203/S0 (MUX21X1_RVT)                       0.0477449037 0.0000000000 * 1.9200192094 r
+  clock_optctmTdsLR_1_3203/Y (MUX21X1_RVT)                        0.0578346103 0.1000000238 * 2.0200192332 r
+  n65 (net)                                          2 2.8024420738 
+  clock_optctmTdsLR_1_3207/A1 (OA221X1_HVT)                       0.0578346364 0.0000000000 * 2.0200192332 r
+  clock_optctmTdsLR_1_3207/Y (OA221X1_HVT)                        0.0776308924 0.1800000668 * 2.2000193000 r
+  n212 (net)                                         1 3.0114645958 
+  address_gen_inst_ovflw_reg/D (SDFFARX1_LVT)                     0.0776309744 0.0000000000 * 2.2000193000 r
+  data arrival time                                                                     2.2000193596
+
+  clock CLK (rise edge)                                           0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                           0.6400192380 * 2.6400192380
+  clock reconvergence pessimism                                              0.0000000000 2.6400192380
+  address_gen_inst_ovflw_reg/CLK (SDFFARX1_LVT)                                         2.6400192380 r
+  library setup time                                                         -0.1199999973 * 2.5200192407
+  data required time                                                                    2.5200192928
+  -------------------------------------------------------------------------------------------------
+  data required time                                                                    2.5200192928
+  data arrival time                                                                     -2.2000193596
+  -------------------------------------------------------------------------------------------------
+  slack (MET)                                                                           0.3199999332
+
+
+1

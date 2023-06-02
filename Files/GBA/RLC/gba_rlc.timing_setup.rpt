@@ -1,0 +1,341 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group CLK
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_rlc
+Version: P-2019.03-SP5
+Date   : Sun Apr 30 16:05:56 2023
+****************************************
+
+
+  Startpoint: rlc_inst_count_regx0x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: rlc_inst_count_regx0x
+               (rising edge-triggered data to data check clocked by CLK)
+  Last common pin: clk
+  Path Group: CLK
+  Path Type: max
+
+  Point                                      Fanout    Cap      Trans       Incr       Path
+  --------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                      0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                      0.6200203896 * 0.6200203896
+  rlc_inst_count_regx0x/CLK (SDFFASRSX2_LVT)                 0.2101776451 0.0000000000 0.6200203896 r
+  rlc_inst_count_regx0x/Q (SDFFASRSX2_LVT)                   0.0715971813 0.2599999905 * 0.8800203800 r
+  n282 (net)                                    4 9.6173238754 
+  U145/A (NBUFFX8_RVT)                                       0.0715981871 0.0000000000 * 0.8800203800 r
+  U145/Y (NBUFFX8_RVT)                                       0.0304336362 0.0600000024 * 0.9400203824 r
+  n276 (net)                                    5 7.8393363953 
+  U126/A (INVX2_RVT)                                         0.0304339174 0.0000000000 * 0.9400203824 r
+  U126/Y (INVX2_RVT)                                         0.0248357225 0.0199999809 * 0.9600203633 f
+  n143 (net)                                    2 2.4695134163 
+  clock_optctmTdsLR_1_2765/A2 (NAND2X0_RVT)                  0.0248357560 0.0000000000 * 0.9600203633 f
+  clock_optctmTdsLR_1_2765/Y (NAND2X0_RVT)                   0.0651359707 0.0500000119 * 1.0100203753 r
+  n244 (net)                                    1 1.5476610661 
+  rlc_inst_count_regx0x/SETB (SDFFASRSX2_LVT)                0.0651359707 0.0000000000 * 1.0100203753 r
+  data arrival time                                                                1.0100203753
+
+  clock CLK (rise edge)                                      0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                      0.6200204492 * 0.6200204492
+  clock reconvergence pessimism                                         0.0000000000 0.6200204492
+  rlc_inst_count_regx0x/CLK (SDFFASRSX2_LVT)                 0.2101776451 0.0000000000 0.6200204492 r
+  rlc_inst_count_regx0x/Q (SDFFASRSX2_LVT)                   0.0657887384 0.2599999905 * 0.8800204396 f
+  n282 (net)                                    4 9.5948104858 
+  U145/A (NBUFFX8_RVT)                                       0.0657898337 0.0000000000 * 0.8800204396 f
+  U145/Y (NBUFFX8_RVT)                                       0.0285681970 0.0600000024 * 0.9400204420 f
+  n276 (net)                                    5 7.7891454697 
+  placectmTdsLR_2_624/A (INVX2_RVT)                          0.0285684932 0.0000000000 * 0.9400204420 f
+  placectmTdsLR_2_624/Y (INVX2_RVT)                          0.0189649481 0.0199999809 * 0.9600204229 r
+  popt_net_14 (net)                             1 1.0408868790 
+  placectmTdsLR_1_623/A1 (OR2X1_RVT)                         0.0189649500 0.0000000000 * 0.9600204229 r
+  placectmTdsLR_1_623/Y (OR2X1_RVT)                          0.0488427915 0.0600000024 * 1.0200204253 r
+  n240 (net)                                    1 1.2058140039 
+  rlc_inst_count_regx0x/RSTB (SDFFASRSX2_LVT)                0.0488427915 0.0000000000 * 1.0200204253 r
+  data check setup time                                                 -0.0599999987 * 0.9600204267
+  data required time                                                               0.9600204229
+  --------------------------------------------------------------------------------------------
+  data required time                                                               0.9600204229
+  data arrival time                                                                -1.0100203753
+  --------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                 -0.0499999486
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group comb
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_rlc
+Version: P-2019.03-SP5
+Date   : Sun Apr 30 16:05:56 2023
+****************************************
+
+
+  Startpoint: Vv (input port clocked by CLK)
+  Endpoint: out2 (output port clocked by CLK)
+  Path Group: comb
+  Path Type: max
+
+  Point                                    Fanout    Cap      Trans       Incr       Path
+  ------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                    0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                         0.6206510067 0.6206510067
+  input external delay                                                0.0799999982 0.7006510049 r
+  Vv (in)                                                  0.2000000030 0.0000250340 & 0.7006760389 r
+  Vv (net)                                    1 2510.1723632812 
+  I1025_W_Vv/PADIO (I1025_EW)                              0.2000000030 0.0199999809 * 0.7206760198 r
+  I1025_W_Vv/DOUT (I1025_EW)                               0.1953075230 0.4500000477 * 1.1706760675 r
+  hvoHier_Vv (net)                            1 19.8486061096 
+  U73/A (INVX16_RVT)                                       0.1954201609 0.0000000000 * 1.1706760675 r
+  U73/Y (INVX16_RVT)                                       0.0772077441 0.0299999714 * 1.2006760389 f
+  n214 (net)                                  1 19.3189563751 
+  U171/A (INVX8_RVT)                                       0.0773439556 0.0000000000 * 1.2006760389 f
+  U171/Y (INVX8_RVT)                                       0.0445272215 0.0399999619 * 1.2406760007 r
+  n97 (net)                                   2 13.9468650818 
+  U31/A (INVX4_RVT)                                        0.0445560105 0.0000000000 * 1.2406760007 r
+  U31/Y (INVX4_RVT)                                        0.0314453766 0.0299999714 * 1.2706759721 f
+  n99 (net)                                   3 6.0924825668 
+  clock_optctmTdsLR_1_2764/A1 (NAND3X0_RVT)                0.0314458050 0.0000000000 * 1.2706759721 f
+  clock_optctmTdsLR_1_2764/Y (NAND3X0_RVT)                 0.0645665675 0.0499999523 * 1.3206759244 r
+  tmp_net83 (net)                             1 1.9188666344 
+  U134/A1 (OA21X1_RVT)                                     0.0645665899 0.0000000000 * 1.3206759244 r
+  U134/Y (OA21X1_RVT)                                      0.0573143736 0.1000001431 * 1.4206760675 r
+  n208 (net)                                  1 2.7868850231 
+  U151/A (INVX2_RVT)                                       0.0573144332 0.0000000000 * 1.4206760675 r
+  U151/Y (INVX2_RVT)                                       0.0333047211 0.0299999714 * 1.4506760389 f
+  n247 (net)                                  2 1.9957746267 
+  clock_optctmTdsLR_1_2590/A1 (NAND2X0_RVT)                0.0333047286 0.0000000000 * 1.4506760389 f
+  clock_optctmTdsLR_1_2590/Y (NAND2X0_RVT)                 0.0711875558 0.0599999428 * 1.5106759816 r
+  n204 (net)                                  1 1.9027829170 
+  U33/A3 (NAND4X0_RVT)                                     0.0711875707 0.0000000000 * 1.5106759816 r
+  U33/Y (NAND4X0_RVT)                                      0.0852933899 0.0899999142 * 1.6006758958 f
+  n191 (net)                                  1 1.2765018940 
+  U122/A4 (OAI22X2_RVT)                                    0.0852933899 0.0000000000 * 1.6006758958 f
+  U122/Y (OAI22X2_RVT)                                     0.0459811166 0.1200000048 * 1.7206759006 r
+  n245 (net)                                  1 7.5085663795 
+  U43/A (INVX8_RVT)                                        0.0459826849 0.0000000000 * 1.7206759006 r
+  U43/Y (INVX8_RVT)                                        0.0385111421 0.0299999714 * 1.7506758720 f
+  n262 (net)                                  1 18.2351894379 
+  U37/A (INVX16_RVT)                                       0.0387040265 0.0000000000 * 1.7506758720 f
+  U37/Y (INVX16_RVT)                                       0.0437707715 0.0299999714 * 1.7806758434 r
+  n261 (net)                                  1 49.7484817505 
+  U32/A (INVX32_RVT)                                       0.0577006266 0.0199999809 * 1.8006758243 r
+  U32/Y (INVX32_RVT)                                       0.0395522043 0.0199999809 * 1.8206758052 f
+  n260 (net)                                  1 34.9722137451 
+  D4I1025_N_out2/DIN (D4I1025_NS)                          0.0439845957 0.0099999905 * 1.8306757957 f
+  D4I1025_N_out2/PADIO (D4I1025_NS)                        2.1316075325 1.8200000525 * 3.6506758481 f
+  out2 (net)                                  1 3769.1469726562 
+  out2 (inout)                                             2.1316075325 0.0000000000 * 3.6506758481 f
+  data arrival time                                                              3.6506757736
+
+  clock CLK (rise edge)                                    0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                         0.6206510067 2.6206510067
+  clock reconvergence pessimism                                       0.0000000000 2.6206510067
+  output external delay                                               -0.1199999973 2.5006510094
+  data required time                                                             2.5006511211
+  ------------------------------------------------------------------------------------------
+  data required time                                                             2.5006511211
+  data arrival time                                                              -3.6506757736
+  ------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                               -1.1500248909
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group inputs
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_rlc
+Version: P-2019.03-SP5
+Date   : Sun Apr 30 16:05:56 2023
+****************************************
+
+
+  Startpoint: rst (input port clocked by CLK)
+  Endpoint: rlc_inst_count_regx0x
+               (rising edge-triggered data to data check clocked by CLK)
+  Path Group: inputs
+  Path Type: max
+
+  Point                                      Fanout    Cap      Trans       Incr       Path
+  --------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                      0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                           0.6206510067 0.6206510067
+  input external delay                                                  0.0799999982 0.7006510049 r
+  rst (in)                                                   0.2000000030 0.0000250936 & 0.7006760985 r
+  rst (net)                                     1 2510.0192871094 
+  I1025_W_rst/PADIO (I1025_EW)                               0.2000000030 0.0199999809 * 0.7206760794 r
+  I1025_W_rst/DOUT (I1025_EW)                                0.2345351428 0.4699999988 * 1.1906760782 r
+  hvoHier_rst (net)                             4 44.2679634094 
+  clock_optctmTdsLR_2_2766/A (INVX8_RVT)                     0.2364012152 0.0200000107 * 1.2106760889 r
+  clock_optctmTdsLR_2_2766/Y (INVX8_RVT)                     0.0765287355 0.0099999905 * 1.2206760794 f
+  tmp_net84 (net)                               1 2.2866640091 
+  clock_optctmTdsLR_1_2765/A1 (NAND2X0_RVT)                  0.0765287653 0.0000000000 * 1.2206760794 f
+  clock_optctmTdsLR_1_2765/Y (NAND2X0_RVT)                   0.0651359707 0.0700000525 * 1.2906761318 r
+  n244 (net)                                    1 1.5476610661 
+  rlc_inst_count_regx0x/SETB (SDFFASRSX2_LVT)                0.0651359707 0.0000000000 * 1.2906761318 r
+  data arrival time                                                                1.2906761169
+
+  clock CLK (rise edge)                                      0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                      0.6200204492 * 0.6200204492
+  clock reconvergence pessimism                                         0.0000000000 0.6200204492
+  rlc_inst_count_regx0x/CLK (SDFFASRSX2_LVT)                 0.2101776451 0.0000000000 0.6200204492 r
+  rlc_inst_count_regx0x/Q (SDFFASRSX2_LVT)                   0.0657887384 0.2599999905 * 0.8800204396 f
+  n282 (net)                                    4 9.5948104858 
+  U145/A (NBUFFX8_RVT)                                       0.0657898337 0.0000000000 * 0.8800204396 f
+  U145/Y (NBUFFX8_RVT)                                       0.0285681970 0.0600000024 * 0.9400204420 f
+  n276 (net)                                    5 7.7891454697 
+  placectmTdsLR_2_624/A (INVX2_RVT)                          0.0285684932 0.0000000000 * 0.9400204420 f
+  placectmTdsLR_2_624/Y (INVX2_RVT)                          0.0189649481 0.0199999809 * 0.9600204229 r
+  popt_net_14 (net)                             1 1.0408868790 
+  placectmTdsLR_1_623/A1 (OR2X1_RVT)                         0.0189649500 0.0000000000 * 0.9600204229 r
+  placectmTdsLR_1_623/Y (OR2X1_RVT)                          0.0488427915 0.0600000024 * 1.0200204253 r
+  n240 (net)                                    1 1.2058140039 
+  rlc_inst_count_regx0x/RSTB (SDFFASRSX2_LVT)                0.0488427915 0.0000000000 * 1.0200204253 r
+  data check setup time                                                 -0.0599999987 * 0.9600204267
+  data required time                                                               0.9600204229
+  --------------------------------------------------------------------------------------------
+  data required time                                                               0.9600204229
+  data arrival time                                                                -1.2906761169
+  --------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                 -0.3306556940
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group output
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_rlc
+Version: P-2019.03-SP5
+Date   : Sun Apr 30 16:05:56 2023
+****************************************
+
+
+  Startpoint: rlc_inst_count_regx0x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: out2 (output port clocked by CLK)
+  Path Group: output
+  Path Type: max
+
+  Point                                     Fanout    Cap      Trans       Incr       Path
+  -------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                     0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                     0.6200203896 * 0.6200203896
+  rlc_inst_count_regx0x/CLK (SDFFASRSX2_LVT)                0.2101776451 0.0000000000 0.6200203896 r
+  rlc_inst_count_regx0x/Q (SDFFASRSX2_LVT)                  0.0657887384 0.2599999905 * 0.8800203800 f
+  n282 (net)                                   4 9.5948104858 
+  clock_optctmTdsLR_1_2590/A2 (NAND2X0_RVT)                 0.0657898337 0.0000000000 * 0.8800203800 f
+  clock_optctmTdsLR_1_2590/Y (NAND2X0_RVT)                  0.0711875558 0.0799999237 * 0.9600203037 r
+  n204 (net)                                   1 1.9027829170 
+  U33/A3 (NAND4X0_RVT)                                      0.0711875707 0.0000000000 * 0.9600203037 r
+  U33/Y (NAND4X0_RVT)                                       0.0852933899 0.0899999142 * 1.0500202179 f
+  n191 (net)                                   1 1.2765018940 
+  U122/A4 (OAI22X2_RVT)                                     0.0852933899 0.0000000000 * 1.0500202179 f
+  U122/Y (OAI22X2_RVT)                                      0.0459811166 0.1200000048 * 1.1700202227 r
+  n245 (net)                                   1 7.5085663795 
+  U43/A (INVX8_RVT)                                         0.0459826849 0.0000000000 * 1.1700202227 r
+  U43/Y (INVX8_RVT)                                         0.0385111421 0.0299999714 * 1.2000201941 f
+  n262 (net)                                   1 18.2351894379 
+  U37/A (INVX16_RVT)                                        0.0387040265 0.0000000000 * 1.2000201941 f
+  U37/Y (INVX16_RVT)                                        0.0437707715 0.0299999714 * 1.2300201654 r
+  n261 (net)                                   1 49.7484817505 
+  U32/A (INVX32_RVT)                                        0.0577006266 0.0199999809 * 1.2500201464 r
+  U32/Y (INVX32_RVT)                                        0.0395522043 0.0199999809 * 1.2700201273 f
+  n260 (net)                                   1 34.9722137451 
+  D4I1025_N_out2/DIN (D4I1025_NS)                           0.0439845957 0.0099999905 * 1.2800201178 f
+  D4I1025_N_out2/PADIO (D4I1025_NS)                         2.1316075325 1.8200000525 * 3.1000201702 f
+  out2 (net)                                   1 3769.1469726562 
+  out2 (inout)                                              2.1316075325 0.0000000000 * 3.1000201702 f
+  data arrival time                                                               3.1000201702
+
+  clock CLK (rise edge)                                     0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                          0.6206510067 2.6206510067
+  clock reconvergence pessimism                                        0.0000000000 2.6206510067
+  output external delay                                                -0.1199999973 2.5006510094
+  data required time                                                              2.5006511211
+  -------------------------------------------------------------------------------------------
+  data required time                                                              2.5006511211
+  data arrival time                                                               -3.1000201702
+  -------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                -0.5993691683
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group reg2reg
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_rlc
+Version: P-2019.03-SP5
+Date   : Sun Apr 30 16:05:56 2023
+****************************************
+
+
+  Startpoint: rlc_inst_count_regx0x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: rlc_inst_count_regx1x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Last common pin: clk
+  Path Group: reg2reg
+  Path Type: max
+
+  Point                                     Fanout    Cap      Trans       Incr       Path
+  -------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                     0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                     0.6200203896 * 0.6200203896
+  rlc_inst_count_regx0x/CLK (SDFFASRSX2_LVT)                0.2101776451 0.0000000000 0.6200203896 r
+  rlc_inst_count_regx0x/SO (SDFFASRSX2_LVT)                 0.0662575290 0.2500000000 * 0.8700203896 r
+  n297 (net)                                   1 3.3675551414 
+  rlc_inst_count_regx1x/SI (SDFFASRSX2_LVT)                 0.0662576258 0.0000000000 * 0.8700203896 r
+  data arrival time                                                               0.8700203896
+
+  clock CLK (rise edge)                                     0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                     0.6200203896 * 2.6200203896
+  clock reconvergence pessimism                                        0.0000000000 2.6200203896
+  rlc_inst_count_regx1x/CLK (SDFFASRSX2_LVT)                                      2.6200203896 r
+  library setup time                                                   -0.1500000060 * 2.4700203836
+  data required time                                                              2.4700202942
+  -------------------------------------------------------------------------------------------
+  data required time                                                              2.4700202942
+  data arrival time                                                               -0.8700203896
+  -------------------------------------------------------------------------------------------
+  slack (MET)                                                                     1.6000000238
+
+
+1

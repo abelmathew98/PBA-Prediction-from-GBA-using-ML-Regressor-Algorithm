@@ -1,0 +1,252 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group comb
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_pwm_generator
+Version: P-2019.03-SP5
+Date   : Sat Apr 29 21:49:20 2023
+****************************************
+
+Warning: The drive-resistance for the timing arc (saed32rvt_ss0p95v125c/INVX32_RVT) placeZINV_14_inst_3/A-->Y (max falling negative_unate) is much less than the network impedance to ground; PrimeTime has adjusted the drive-resistance to improve accuracy. (RC-009)
+
+  Startpoint: test_se (input port clocked by CLK)
+  Endpoint: test_so (output port clocked by CLK)
+  Path Group: comb
+  Path Type: max  (recalculated)
+
+  Point                                    Fanout    Cap      Trans       Incr       Path
+  ------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                    0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                         1.3190499544 1.3190499544
+  input external delay                                                0.0799999982 1.3990499526 r
+  test_se (in)                                             0.2000000030 0.0000251532 & 1.3990751058 r
+  test_se (net)                               1 2510.3474121094 
+  I1025_W_test_se/PADIO (I1025_EW)                         0.2000000179 0.0199999809 * 1.4190750867 r
+  I1025_W_test_se/DOUT (I1025_EW)                          0.2108640224 0.4600000381 * 1.8790751249 r
+  hvoHier_test_se (net)                       2 34.4952964783 
+  U132/S0 (MUX21X1_LVT)                                    0.2120620459 0.0099999905 * 1.8890751153 r
+  U132/Y (MUX21X1_LVT)                                     0.0475745089 0.0700000525 * 1.9590751678 r
+  n271 (net)                                  1 2.0056302547 
+  clock_optgre_mt_inst_3176/A (NBUFFX8_LVT)                0.0475745164 0.0000000000 * 1.9590751678 r
+  clock_optgre_mt_inst_3176/Y (NBUFFX8_LVT)                0.0349120870 0.0599999428 * 2.0190751106 r
+  gre_net_31 (net)                            1 21.3128890991 
+  placeZINV_14_inst_3/A (INVX32_RVT)                       0.0349124745 0.0000000000 * 2.0190751106 r
+  placeZINV_14_inst_3/Y (INVX32_RVT)                       0.0271177888 0.0199999809 * 2.0390750915 f
+  placeZINV_14_0 (net)                        1 61.9875946045 
+  D4I1025_N_test_so/DIN (D4I1025_NS)                       0.0841534957 0.0499999523 * 2.0890750438 f
+  D4I1025_N_test_so/PADIO (D4I1025_NS)                     2.1318211555 1.8400001526 * 3.9290751964 f
+  test_so (net)                               1 3769.1469726562 
+  test_so (inout)                                          2.1318211555 0.0000000000 * 3.9290751964 f
+  data arrival time                                                              3.9290752411
+
+  clock CLK (rise edge)                                    0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                         1.3190499544 3.3190499544
+  clock reconvergence pessimism                                       0.0000000000 3.3190499544
+  output external delay                                               -0.1199999973 3.1990499571
+  data required time                                                             3.1990499496
+  ------------------------------------------------------------------------------------------
+  data required time                                                             3.1990499496
+  data arrival time                                                              -3.9290752411
+  ------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                               -0.7300252318
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group inputs
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_pwm_generator
+Version: P-2019.03-SP5
+Date   : Sat Apr 29 21:49:20 2023
+****************************************
+
+
+  Startpoint: test_se (input port clocked by CLK)
+  Endpoint: pwm_generator_inst_counter_PWM_regx1x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: inputs
+  Path Type: max  (recalculated)
+
+  Point                                                  Fanout    Cap      Trans       Incr       Path
+  --------------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                                  0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                                       1.3190499544 1.3190499544
+  input external delay                                                              0.0799999982 1.3990499526 r
+  test_se (in)                                                           0.2000000030 0.0000251532 & 1.3990751058 r
+  test_se (net)                                             1 2510.3474121094 
+  I1025_W_test_se/PADIO (I1025_EW)                                       0.2000000179 0.0199999809 * 1.4190750867 r
+  I1025_W_test_se/DOUT (I1025_EW)                                        0.2108640224 0.4600000381 * 1.8790751249 r
+  hvoHier_test_se (net)                                     2 34.4952964783 
+  U172/A (NBUFFX2_HVT)                                                   0.2120608091 0.0099999905 * 1.8890751153 r
+  U172/Y (NBUFFX2_HVT)                                                   0.0831013918 0.1599999666 * 2.0490750819 r
+  n280 (net)                                                3 9.5132942200 
+  U54/A (NBUFFX4_HVT)                                                    0.0831021145 0.0000000000 * 2.0490750819 r
+  U54/Y (NBUFFX4_HVT)                                                    0.0876545608 0.1300001144 * 2.1790751964 r
+  n94 (net)                                                13 26.0223102570 
+  pwm_generator_inst_counter_PWM_regx1x/SE (SDFFARX2_HVT)                0.0876920372 0.0000000000 * 2.1790751964 r
+  data arrival time                                                                            2.1790752411
+
+  clock CLK (rise edge)                                                  0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                                  0.6300199628 * 2.6300199628
+  clock reconvergence pessimism                                                     0.0000000000 2.6300199628
+  pwm_generator_inst_counter_PWM_regx1x/CLK (SDFFARX2_HVT)                                     2.6300199628 r
+  library setup time                                                                -0.2099999934 * 2.4200199693
+  data required time                                                                           2.4200198650
+  --------------------------------------------------------------------------------------------------------
+  data required time                                                                           2.4200198650
+  data arrival time                                                                            -2.1790752411
+  --------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                  0.2409447730
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group output
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_pwm_generator
+Version: P-2019.03-SP5
+Date   : Sat Apr 29 21:49:20 2023
+****************************************
+
+
+  Startpoint: pwm_generator_inst_counter_PWM_regx3x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: PWM_OUT (output port clocked by CLK)
+  Path Group: output
+  Path Type: max  (recalculated)
+
+  Point                                                   Fanout    Cap      Trans       Incr       Path
+  ---------------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                                   0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                                   0.6300199628 * 0.6300199628
+  pwm_generator_inst_counter_PWM_regx3x/CLK (SDFFARX2_HVT)                0.2043232322 0.0000000000 0.6300199628 r
+  pwm_generator_inst_counter_PWM_regx3x/QN (SDFFARX2_HVT)                 0.1209753156 0.3100000024 * 0.9400199652 f
+  pwm_generator_inst_n158 (net)                              7 12.5409278870 
+  U56/A2 (OR2X1_HVT)                                                      0.1210025921 0.0000000000 * 0.9400199652 f
+  U56/Y (OR2X1_HVT)                                                       0.1008497998 0.1499999762 * 1.0900199413 f
+  n255 (net)                                                 3 6.6408314705 
+  U129/A3 (NAND4X0_LVT)                                                   0.1008500457 0.0000000000 * 1.0900199413 f
+  U129/Y (NAND4X0_LVT)                                                    0.0865015015 0.0900000334 * 1.1800199747 r
+  n276 (net)                                                 1 2.9978427887 
+  U121/A1 (AND4X1_LVT)                                                    0.0865015611 0.0000000000 * 1.1800199747 r
+  U121/Y (AND4X1_LVT)                                                     0.0432718359 0.0700000525 * 1.2500200272 r
+  n265 (net)                                                 1 2.3271708488 
+  placeZBUF_24_inst_5/A (NBUFFX8_LVT)                                     0.0432718620 0.0000000000 * 1.2500200272 r
+  placeZBUF_24_inst_5/Y (NBUFFX8_LVT)                                     0.0551910251 0.0599999428 * 1.3100199699 r
+  placeZBUF_24_1 (net)                                       1 40.0372047424 
+  placeZINV_14_inst_4/A (INVX32_RVT)                                      0.0573756807 0.0099999905 * 1.3200199604 r
+  placeZINV_14_inst_4/Y (INVX32_RVT)                                      0.0443693884 0.0199999809 * 1.3400199413 f
+  placeZINV_14_1 (net)                                       1 58.5336532593 
+  D4I1025_W_PWM_OUT/DIN (D4I1025_EW)                                      0.0697623491 0.0299999714 * 1.3700199127 f
+  D4I1025_W_PWM_OUT/PADIO (D4I1025_EW)                                    2.1317446232 1.8299999237 * 3.2000198364 f
+  PWM_OUT (net)                                              1 3769.1469726562 
+  PWM_OUT (inout)                                                         2.1317446232 0.0000000000 * 3.2000198364 f
+  data arrival time                                                                             3.2000198364
+
+  clock CLK (rise edge)                                                   0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                                        1.3190499544 3.3190499544
+  clock reconvergence pessimism                                                      0.0000000000 3.3190499544
+  output external delay                                                              -0.1199999973 3.1990499571
+  data required time                                                                            3.1990499496
+  ---------------------------------------------------------------------------------------------------------
+  data required time                                                                            3.1990499496
+  data arrival time                                                                             -3.2000198364
+  ---------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                              -0.0009698793
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group reg2reg
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_pwm_generator
+Version: P-2019.03-SP5
+Date   : Sat Apr 29 21:49:20 2023
+****************************************
+
+
+  Startpoint: pwm_generator_inst_PWM_DFF2_Q_reg
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: pwm_generator_inst_DUTY_CYCLE_regx1x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Last common pin: clk
+  Path Group: reg2reg
+  Path Type: max  (recalculated)
+
+  Point                                                Fanout    Cap      Trans       Incr       Path
+  ------------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                                0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                                0.8800199628 * 0.8800199628
+  pwm_generator_inst_PWM_DFF2_Q_reg/CLK (SDFFARX2_HVT)                 0.0718002766 0.0000000000 0.8800199628 r
+  pwm_generator_inst_PWM_DFF2_Q_reg/QN (SDFFARX2_HVT)                  0.0653247386 0.2099999785 * 1.0900199413 r
+  n228 (net)                                              2 2.1886854172 
+  U63/A2 (NAND3X2_HVT)                                                 0.0653247386 0.0000000000 * 1.0900199413 r
+  U63/Y (NAND3X2_HVT)                                                  0.1060093194 0.2100000381 * 1.3000199795 f
+  n241 (net)                                              6 14.4015235901 
+  U164/A (INVX0_HVT)                                                   0.1060439795 0.0000000000 * 1.3000199795 f
+  U164/Y (INVX0_HVT)                                                   0.0663004369 0.0700000525 * 1.3700200319 r
+  n164 (net)                                              1 1.6941131353 
+  U67/A2 (NAND3X0_HVT)                                                 0.0663004443 0.0000000000 * 1.3700200319 r
+  U67/Y (NAND3X0_HVT)                                                  0.2692225277 0.2300000191 * 1.6000200510 f
+  n80 (net)                                               2 4.9058465958 
+  U181/A (INVX0_HVT)                                                   0.2692225575 0.0000000000 * 1.6000200510 f
+  U181/Y (INVX0_HVT)                                                   0.1489672065 0.1399999857 * 1.7400200367 r
+  n181 (net)                                              2 3.1198592186 
+  clock_optctmTdsLR_1_3161/A1 (OA221X1_HVT)                            0.1489672065 0.0000000000 * 1.7400200367 r
+  clock_optctmTdsLR_1_3161/Y (OA221X1_HVT)                             0.0645244941 0.2100000381 * 1.9500200748 r
+  n85 (net)                                               1 2.3408169746 
+  clock_optctmTdsLR_1_3171/A4 (OAI221X1_HVT)                           0.0645245090 0.0000000000 * 1.9500200748 r
+  clock_optctmTdsLR_1_3171/Y (OAI221X1_HVT)                            0.0453565791 0.1800000668 * 2.1300201416 f
+  pwm_generator_inst_n168 (net)                           1 2.2225999832 
+  pwm_generator_inst_DUTY_CYCLE_regx1x/D (SDFFARX2_HVT)                0.0453566052 0.0000000000 * 2.1300201416 f
+  data arrival time                                                                          2.1300201416
+
+  clock CLK (rise edge)                                                0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                                0.7500199676 * 2.7500199676
+  clock reconvergence pessimism                                                   0.0000000000 2.7500199676
+  pwm_generator_inst_DUTY_CYCLE_regx1x/CLK (SDFFARX2_HVT)                                    2.7500199676 r
+  library setup time                                                              -0.1599999964 * 2.5900199711
+  data required time                                                                         2.5900199413
+  ------------------------------------------------------------------------------------------------------
+  data required time                                                                         2.5900199413
+  data arrival time                                                                          -2.1300201416
+  ------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                0.4599998295
+
+
+1

@@ -1,0 +1,289 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group comb
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_stochastic_bitstream_generator_with_parity_checker
+Version: P-2019.03-SP5
+Date   : Fri May  5 03:16:13 2023
+****************************************
+
+
+  Startpoint: x[1] (input port clocked by CLK)
+  Endpoint: odd_parity (output port clocked by CLK)
+  Path Group: comb
+  Path Type: max
+
+  Point                                      Fanout    Cap      Trans       Incr       Path
+  --------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                      0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                           0.7031059861 0.7031059861
+  input external delay                                                  0.0799999982 0.7831059843 r
+  x[1] (in)                                                  0.2000000030 0.0000250340 & 0.7831310183 r
+  x[1] (net)                                    1 2510.1235351562 
+  I1025_W_xx1x/PADIO (I1025_EW)                              0.2000000030 0.0199999809 * 0.8031309992 r
+  I1025_W_xx1x/DOUT (I1025_EW)                               0.1986286938 0.4600000381 * 1.2631310374 r
+  hvoHier_x[1] (net)                            4 22.8961029053 
+  U133/A1 (NAND2X4_RVT)                                      0.1988741606 0.0099999905 * 1.2731310278 r
+  U133/Y (NAND2X4_RVT)                                       0.0414471552 0.1100001335 * 1.3831311613 f
+  n286 (net)                                    2 9.4020576477 
+  U120/A (INVX8_RVT)                                         0.0414487943 0.0000000000 * 1.3831311613 f
+  U120/Y (INVX8_RVT)                                         0.0234640315 0.0199999809 * 1.4031311423 r
+  n144 (net)                                    2 5.0118198395 
+  clock_optctmTdsLR_2_2660/A1 (NAND2X2_HVT)                  0.0234645307 0.0000000000 * 1.4031311423 r
+  clock_optctmTdsLR_2_2660/Y (NAND2X2_HVT)                   0.0452007279 0.1199998856 * 1.5231310278 f
+  copt_net_44 (net)                             1 4.5937633514 
+  clock_optctmTdsLR_2_2792/A2 (NAND3X0_RVT)                  0.0452012233 0.0000000000 * 1.5231310278 f
+  clock_optctmTdsLR_2_2792/Y (NAND3X0_RVT)                   0.0588625669 0.0599999428 * 1.5831309706 r
+  copt_net_129 (net)                            1 2.1409809589 
+  clock_optctmTdsLR_1_2791/A3 (AND3X2_LVT)                   0.0588625930 0.0000000000 * 1.5831309706 r
+  clock_optctmTdsLR_1_2791/Y (AND3X2_LVT)                    0.0489257053 0.0699999332 * 1.6531309038 r
+  n38 (net)                                     1 5.9716553688 
+  clock_optZINV_156_inst_2571/A (INVX8_RVT)                  0.0489257835 0.0000000000 * 1.6531309038 r
+  clock_optZINV_156_inst_2571/Y (INVX8_RVT)                  0.0482957587 0.0399999619 * 1.6931308657 f
+  clock_optZINV_156_0 (net)                     1 25.3195590973 
+  clock_optZBUF_44_inst_2570/A (NBUFFX32_RVT)                0.0492474213 0.0100001097 * 1.7031309754 f
+  clock_optZBUF_44_inst_2570/Y (NBUFFX32_RVT)                0.0385173745 0.0700000525 * 1.7731310278 f
+  clock_optZBUF_44_0 (net)                      2 93.8851852417 
+  D4I1025_W_odd_parity/DIN (D4I1025_EW)                      0.1226018295 0.0700000525 * 1.8431310803 f
+  D4I1025_W_odd_parity/PADIO (D4I1025_EW)                    2.1320257187 1.8500000238 * 3.6931311041 f
+  odd_parity (net)                              1 3769.1469726562 
+  odd_parity (inout)                                         2.1320257187 0.0000000000 * 3.6931311041 f
+  data arrival time                                                                3.6931312084
+
+  clock CLK (rise edge)                                      0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                           0.7031059861 2.7031059861
+  clock reconvergence pessimism                                         0.0000000000 2.7031059861
+  output external delay                                                 -0.1199999973 2.5831059888
+  data required time                                                               2.5831060410
+  --------------------------------------------------------------------------------------------
+  data required time                                                               2.5831060410
+  data arrival time                                                                -3.6931312084
+  --------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                 -1.1100251675
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group inputs
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_stochastic_bitstream_generator_with_parity_checker
+Version: P-2019.03-SP5
+Date   : Fri May  5 03:16:13 2023
+****************************************
+
+
+  Startpoint: x[3] (input port clocked by CLK)
+  Endpoint: stochastic_bitstream_generator_with_parity_checker_inst_D0_Q_reg
+               (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: inputs
+  Path Type: max
+
+  Point                                                                            Fanout    Cap      Trans       Incr       Path
+  ----------------------------------------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                                                            0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                                                                 0.7031059861 0.7031059861
+  input external delay                                                                                        0.0799999982 0.7831059843 r
+  x[3] (in)                                                                                        0.2000000030 0.0000251532 & 0.7831311375 r
+  x[3] (net)                                                                          1 2510.0744628906 
+  I1025_W_xx3x/PADIO (I1025_EW)                                                                    0.2000000030 0.0199999809 * 0.8031311184 r
+  I1025_W_xx3x/DOUT (I1025_EW)                                                                     0.2259786278 0.4700000286 * 1.2731311470 r
+  hvoHier_x[3] (net)                                                                  4 38.9322509766 
+  clock_optctmTdsLR_2_2655/A2 (NOR2X0_RVT)                                                         0.2278409302 0.0199999809 * 1.2931311280 r
+  clock_optctmTdsLR_2_2655/Y (NOR2X0_RVT)                                                          0.0519551300 0.1299999952 * 1.4231311232 f
+  n186 (net)                                                                          2 4.2989888191 
+  clock_optctmTdsLR_1_2654/A (INVX2_RVT)                                                           0.0519552529 0.0000000000 * 1.4231311232 f
+  clock_optctmTdsLR_1_2654/Y (INVX2_RVT)                                                           0.0321590081 0.0299999714 * 1.4531310946 r
+  n187 (net)                                                                          1 2.2080714703 
+  U33/A1 (AND2X1_RVT)                                                                              0.0321590640 0.0000000000 * 1.4531310946 r
+  U33/Y (AND2X1_RVT)                                                                               0.0431908295 0.0700000525 * 1.5231311470 r
+  n95 (net)                                                                           2 3.2526700497 
+  clock_optctmTdsLR_2_2723/A3 (NAND3X0_RVT)                                                        0.0431908853 0.0000000000 * 1.5231311470 r
+  clock_optctmTdsLR_2_2723/Y (NAND3X0_RVT)                                                         0.1086205393 0.0800000429 * 1.6031311899 f
+  copt_net_76 (net)                                                                   1 2.0985817909 
+  clock_optctmTdsLR_1_2791/A1 (AND3X2_LVT)                                                         0.1086205542 0.0000000000 * 1.6031311899 f
+  clock_optctmTdsLR_1_2791/Y (AND3X2_LVT)                                                          0.0506507382 0.1100000143 * 1.7131312042 f
+  n38 (net)                                                                           1 5.9162831306 
+  clock_optZINV_156_inst_2571/A (INVX8_RVT)                                                        0.0506508127 0.0000000000 * 1.7131312042 f
+  clock_optZINV_156_inst_2571/Y (INVX8_RVT)                                                        0.0468798466 0.0400000215 * 1.7531312257 r
+  clock_optZINV_156_0 (net)                                                           1 25.3480281830 
+  clock_optZBUF_44_inst_2570/A (NBUFFX32_RVT)                                                      0.0478681996 0.0099999905 * 1.7631312162 r
+  clock_optZBUF_44_inst_2570/Y (NBUFFX32_RVT)                                                      0.0413525961 0.0699999928 * 1.8331312090 r
+  clock_optZBUF_44_0 (net)                                                            2 93.7042694092 
+  placeZBUF_2_inst_25/A (NBUFFX4_HVT)                                                              0.0421319865 0.0000000000 * 1.8331312090 r
+  placeZBUF_2_inst_25/Y (NBUFFX4_HVT)                                                              0.0783422291 0.1100000143 * 1.9431312233 r
+  placeZBUF_2_1 (net)                                                                 1 22.0713024139 
+  stochastic_bitstream_generator_with_parity_checker_inst_D0_Q_reg/D (SDFFARX2_HVT)                0.0785311460 0.0000000000 * 1.9431312233 r
+  data arrival time                                                                                                      1.9431312084
+
+  clock CLK (rise edge)                                                                            0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                                                            0.7400181890 * 2.7400181890
+  clock reconvergence pessimism                                                                               0.0000000000 2.7400181890
+  stochastic_bitstream_generator_with_parity_checker_inst_D0_Q_reg/CLK (SDFFARX2_HVT)                                    2.7400181890 r
+  library setup time                                                                                          -0.1299999952 * 2.6100181937
+  data required time                                                                                                     2.6100182533
+  ----------------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                     2.6100182533
+  data arrival time                                                                                                      -1.9431312084
+  ----------------------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                                            0.6668869853
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group output
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_stochastic_bitstream_generator_with_parity_checker
+Version: P-2019.03-SP5
+Date   : Fri May  5 03:16:13 2023
+****************************************
+
+
+  Startpoint: stochastic_bitstream_generator_with_parity_checker_inst_L0_ff2_Q_reg
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: odd_parity (output port clocked by CLK)
+  Path Group: output
+  Path Type: max
+
+  Point                                                                                  Fanout    Cap      Trans       Incr       Path
+  ----------------------------------------------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                                                                  0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                                                                  0.7400181890 * 0.7400181890
+  stochastic_bitstream_generator_with_parity_checker_inst_L0_ff2_Q_reg/CLK (SDFFARX2_HVT)                0.2849375308 0.0000000000 0.7400181890 r
+  stochastic_bitstream_generator_with_parity_checker_inst_L0_ff2_Q_reg/QN (SDFFARX2_HVT)                 0.0743487552 0.2899999619 * 1.0300181508 f
+  stochastic_bitstream_generator_with_parity_checker_inst_n18 (net)                         2 4.2046923637 
+  placeZBUF_130_inst_8/A (NBUFFX4_RVT)                                                                   0.0743488520 0.0000000000 * 1.0300181508 f
+  placeZBUF_130_inst_8/Y (NBUFFX4_RVT)                                                                   0.0384201556 0.0799999237 * 1.1100180745 f
+  placeZBUF_130_0 (net)                                                                     6 8.5332050323 
+  clock_optctmTdsLR_1_2616/A2 (NAND2X0_RVT)                                                              0.0384377949 0.0000000000 * 1.1100180745 f
+  clock_optctmTdsLR_1_2616/Y (NAND2X0_RVT)                                                               0.0888217315 0.0799999237 * 1.1900179982 r
+  n294 (net)                                                                                1 2.8579528332 
+  U34/A2 (NAND2X0_RVT)                                                                                   0.0888217688 0.0000000000 * 1.1900179982 r
+  U34/Y (NAND2X0_RVT)                                                                                    0.1103044301 0.0999999046 * 1.2900179029 f
+  n185 (net)                                                                                1 3.6236691475 
+  clock_optctmTdsLR_1_2678/A3 (AOI22X1_RVT)                                                              0.1103045121 0.0000000000 * 1.2900179029 f
+  clock_optctmTdsLR_1_2678/Y (AOI22X1_RVT)                                                               0.0266233720 0.0999999046 * 1.3900178075 r
+  clock_optZINV_4_2 (net)                                                                   1 1.2218158245 
+  clock_optctmTdsLR_1_2791/A2 (AND3X2_LVT)                                                               0.0266233776 0.0000000000 * 1.3900178075 r
+  clock_optctmTdsLR_1_2791/Y (AND3X2_LVT)                                                                0.0489257053 0.0699999332 * 1.4600177407 r
+  n38 (net)                                                                                 1 5.9716553688 
+  clock_optZINV_156_inst_2571/A (INVX8_RVT)                                                              0.0489257835 0.0000000000 * 1.4600177407 r
+  clock_optZINV_156_inst_2571/Y (INVX8_RVT)                                                              0.0482957587 0.0399999619 * 1.5000177026 f
+  clock_optZINV_156_0 (net)                                                                 1 25.3195590973 
+  clock_optZBUF_44_inst_2570/A (NBUFFX32_RVT)                                                            0.0492474213 0.0100001097 * 1.5100178123 f
+  clock_optZBUF_44_inst_2570/Y (NBUFFX32_RVT)                                                            0.0385173745 0.0700000525 * 1.5800178647 f
+  clock_optZBUF_44_0 (net)                                                                  2 93.8851852417 
+  D4I1025_W_odd_parity/DIN (D4I1025_EW)                                                                  0.1226018295 0.0700000525 * 1.6500179172 f
+  D4I1025_W_odd_parity/PADIO (D4I1025_EW)                                                                2.1320257187 1.8500000238 * 3.5000179410 f
+  odd_parity (net)                                                                          1 3769.1469726562 
+  odd_parity (inout)                                                                                     2.1320257187 0.0000000000 * 3.5000179410 f
+  data arrival time                                                                                                            3.5000178814
+
+  clock CLK (rise edge)                                                                                  0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                                                                       0.7031059861 2.7031059861
+  clock reconvergence pessimism                                                                                     0.0000000000 2.7031059861
+  output external delay                                                                                             -0.1199999973 2.5831059888
+  data required time                                                                                                           2.5831060410
+  ----------------------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                           2.5831060410
+  data arrival time                                                                                                            -3.5000178814
+  ----------------------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                             -0.9169119596
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group reg2reg
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_stochastic_bitstream_generator_with_parity_checker
+Version: P-2019.03-SP5
+Date   : Fri May  5 03:16:13 2023
+****************************************
+
+
+  Startpoint: stochastic_bitstream_generator_with_parity_checker_inst_L0_ff3_Q_reg
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: stochastic_bitstream_generator_with_parity_checker_inst_D0_Q_reg
+               (rising edge-triggered flip-flop clocked by CLK)
+  Last common pin: clk
+  Path Group: reg2reg
+  Path Type: max
+
+  Point                                                                                  Fanout    Cap      Trans       Incr       Path
+  ----------------------------------------------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                                                                  0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                                                                  0.7400181890 * 0.7400181890
+  stochastic_bitstream_generator_with_parity_checker_inst_L0_ff3_Q_reg/CLK (SDFFARX2_HVT)                0.2849376202 0.0000000000 0.7400181890 r
+  stochastic_bitstream_generator_with_parity_checker_inst_L0_ff3_Q_reg/QN (SDFFARX2_HVT)                 0.1148688346 0.3299999237 * 1.0700181127 f
+  n288 (net)                                                                                4 11.3308010101 
+  U133/A2 (NAND2X4_RVT)                                                                                  0.1148700193 0.0000000000 * 1.0700181127 f
+  U133/Y (NAND2X4_RVT)                                                                                   0.0417918265 0.1399999857 * 1.2100180984 r
+  n286 (net)                                                                                2 9.4549484253 
+  U120/A (INVX8_RVT)                                                                                     0.0417934731 0.0000000000 * 1.2100180984 r
+  U120/Y (INVX8_RVT)                                                                                     0.0234166570 0.0199999809 * 1.2300180793 f
+  n144 (net)                                                                                2 5.0060968399 
+  clock_optctmTdsLR_2_2660/A1 (NAND2X2_HVT)                                                              0.0234171562 0.0000000000 * 1.2300180793 f
+  clock_optctmTdsLR_2_2660/Y (NAND2X2_HVT)                                                               0.0425876044 0.1100000143 * 1.3400180936 r
+  copt_net_44 (net)                                                                         1 4.6002745628 
+  clock_optctmTdsLR_2_2792/A2 (NAND3X0_RVT)                                                              0.0425881296 0.0000000000 * 1.3400180936 r
+  clock_optctmTdsLR_2_2792/Y (NAND3X0_RVT)                                                               0.0945896432 0.0800000429 * 1.4200181365 f
+  copt_net_129 (net)                                                                        1 2.1311259270 
+  clock_optctmTdsLR_1_2791/A3 (AND3X2_LVT)                                                               0.0945896581 0.0000000000 * 1.4200181365 f
+  clock_optctmTdsLR_1_2791/Y (AND3X2_LVT)                                                                0.0506507382 0.1100000143 * 1.5300181508 f
+  n38 (net)                                                                                 1 5.9162831306 
+  clock_optZINV_156_inst_2571/A (INVX8_RVT)                                                              0.0506508127 0.0000000000 * 1.5300181508 f
+  clock_optZINV_156_inst_2571/Y (INVX8_RVT)                                                              0.0468798466 0.0400000215 * 1.5700181723 r
+  clock_optZINV_156_0 (net)                                                                 1 25.3480281830 
+  clock_optZBUF_44_inst_2570/A (NBUFFX32_RVT)                                                            0.0478681996 0.0099999905 * 1.5800181627 r
+  clock_optZBUF_44_inst_2570/Y (NBUFFX32_RVT)                                                            0.0413525961 0.0699999928 * 1.6500181556 r
+  clock_optZBUF_44_0 (net)                                                                  2 93.7042694092 
+  placeZBUF_2_inst_25/A (NBUFFX4_HVT)                                                                    0.0421319865 0.0000000000 * 1.6500181556 r
+  placeZBUF_2_inst_25/Y (NBUFFX4_HVT)                                                                    0.0783422291 0.1100000143 * 1.7600181699 r
+  placeZBUF_2_1 (net)                                                                       1 22.0713024139 
+  stochastic_bitstream_generator_with_parity_checker_inst_D0_Q_reg/D (SDFFARX2_HVT)                      0.0785311460 0.0000000000 * 1.7600181699 r
+  data arrival time                                                                                                            1.7600181103
+
+  clock CLK (rise edge)                                                                                  0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                                                                  0.7400181890 * 2.7400181890
+  clock reconvergence pessimism                                                                                     0.0000000000 2.7400181890
+  stochastic_bitstream_generator_with_parity_checker_inst_D0_Q_reg/CLK (SDFFARX2_HVT)                                          2.7400181890 r
+  library setup time                                                                                                -0.1299999952 * 2.6100181937
+  data required time                                                                                                           2.6100182533
+  ----------------------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                           2.6100182533
+  data arrival time                                                                                                            -1.7600181103
+  ----------------------------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                                                  0.8500000238
+
+
+1

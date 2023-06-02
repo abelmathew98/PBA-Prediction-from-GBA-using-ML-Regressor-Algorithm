@@ -1,0 +1,280 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group comb
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_priority16bit
+Version: P-2019.03-SP5
+Date   : Thu Apr  6 14:42:26 2023
+****************************************
+
+
+  Startpoint: A[9] (input port clocked by CLK)
+  Endpoint: Y2[6] (output port clocked by CLK)
+  Path Group: comb
+  Path Type: max
+
+  Point                                       Fanout    Cap      Trans       Incr       Path
+  ---------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                            1.2880599499 1.2880599499
+  input external delay                                                   0.0799999982 1.3680599481 r
+  A[9] (in)                                                   0.2000000030 0.0000250340 & 1.3680849820 r
+  A[9] (net)                                     1 2510.2067871094 
+  I1025_W_Ax9x/PADIO (I1025_EW)                               0.2000000030 0.0199999809 * 1.3880849630 r
+  I1025_W_Ax9x/DOUT (I1025_EW)                                0.2787244022 0.4900000095 * 1.8780849725 r
+  hvoHier_A[9] (net)                             4 86.3271408081 
+  U236/A (INVX4_RVT)                                          0.3021540642 0.0699999332 * 1.9480849057 r
+  U236/Y (INVX4_RVT)                                          0.0977028906 0.0099999905 * 1.9580848962 f
+  n294 (net)                                     1 1.9171606302 
+  U232/A2 (NAND3X2_LVT)                                       0.0977028981 0.0000000000 * 1.9580848962 f
+  U232/Y (NAND3X2_LVT)                                        0.0572484359 0.1299998760 * 2.0880847722 r
+  n373 (net)                                     3 13.0935926437 
+  U542/A (NBUFFX2_LVT)                                        0.0572574325 0.0000000000 * 2.0880847722 r
+  U542/Y (NBUFFX2_LVT)                                        0.0421405025 0.0599999428 * 2.1480847150 r
+  n821 (net)                                     1 8.1435050964 
+  U391/A (INVX8_LVT)                                          0.0421430804 0.0000000000 * 2.1480847150 r
+  U391/Y (INVX8_LVT)                                          0.0211758874 0.0099999905 * 2.1580847055 f
+  n822 (net)                                     2 4.7336831093 
+  clock_optctmTdsLR_2_5472/A1 (AND2X1_RVT)                    0.0211766269 0.0000000000 * 2.1580847055 f
+  clock_optctmTdsLR_2_5472/Y (AND2X1_RVT)                     0.0235186648 0.0499999523 * 2.2080846578 f
+  copt_net_235 (net)                             1 0.8466582298 
+  clock_optctmTdsLR_1_5471/A1 (NAND2X4_RVT)                   0.0235186648 0.0000000000 * 2.2080846578 f
+  clock_optctmTdsLR_1_5471/Y (NAND2X4_RVT)                    0.0447208174 0.0999999046 * 2.3080845624 r
+  n327 (net)                                     1 12.8784341812 
+  clock_optZINV_322_inst_5219/A (INVX16_RVT)                  0.0447279513 0.0000000000 * 2.3080845624 r
+  clock_optZINV_322_inst_5219/Y (INVX16_RVT)                  0.0440491587 0.0299999714 * 2.3380845338 f
+  clock_optZINV_322_4 (net)                      1 39.0335426331 
+  clock_optZBUF_226_inst_5218/A (NBUFFX32_RVT)                0.0506833643 0.0199999809 * 2.3580845147 f
+  clock_optZBUF_226_inst_5218/Y (NBUFFX32_RVT)                0.0379403085 0.0699999332 * 2.4280844480 f
+  clock_optZBUF_226_4 (net)                      1 77.7481994629 
+  clock_optZBUF_117_inst_5217/A (NBUFFX32_RVT)                0.1039231941 0.0599999428 * 2.4880843908 f
+  clock_optZBUF_117_inst_5217/Y (NBUFFX32_RVT)                0.0505800620 0.0899999142 * 2.5780843049 f
+  clock_optZBUF_117_4 (net)                      1 83.5000457764 
+  clock_optZBUF_43_inst_5216/A (NBUFFX32_RVT)                 0.1184678525 0.0699999332 * 2.6480842382 f
+  clock_optZBUF_43_inst_5216/Y (NBUFFX32_RVT)                 0.0539766960 0.0899999142 * 2.7380841523 f
+  clock_optZBUF_43_4 (net)                       1 86.2162170410 
+  D4I1025_S_Y2x6x/DIN (D4I1025_NS)                            0.1250596941 0.0700000525 * 2.8080842048 f
+  D4I1025_S_Y2x6x/PADIO (D4I1025_NS)                          2.1320388317 1.8500000238 * 4.6580842286 f
+  Y2[6] (net)                                    1 3769.1469726562 
+  Y2[6] (inout)                                               2.1320388317 0.0000000000 * 4.6580842286 f
+  data arrival time                                                                 4.6580843925
+
+  clock CLK (rise edge)                                       0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                            1.2880599499 3.2880599499
+  clock reconvergence pessimism                                          0.0000000000 3.2880599499
+  output external delay                                                  -0.1199999973 3.1680599526
+  data required time                                                                3.1680600643
+  ---------------------------------------------------------------------------------------------
+  data required time                                                                3.1680600643
+  data arrival time                                                                 -4.6580843925
+  ---------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                  -1.4900243282
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group inputs
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_priority16bit
+Version: P-2019.03-SP5
+Date   : Thu Apr  6 14:42:26 2023
+****************************************
+
+
+  Startpoint: A[8] (input port clocked by CLK)
+  Endpoint: priority16bit_inst_Y_regx1x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: inputs
+  Path Type: max
+
+  Point                                         Fanout    Cap      Trans       Incr       Path
+  -----------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                         0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                              1.2880599499 1.2880599499
+  input external delay                                                     0.0799999982 1.3680599481 f
+  A[8] (in)                                                     0.2000000030 0.0000257492 & 1.3680856973 f
+  A[8] (net)                                       1 2577.6372070312 
+  I1025_W_Ax8x/PADIO (I1025_EW)                                 0.1999999881 0.0199999809 * 1.3880856782 f
+  I1025_W_Ax8x/DOUT (I1025_EW)                                  0.2680624723 0.4299999475 * 1.8180856258 f
+  hvoHier_A[8] (net)                               3 98.0795593262 
+  U233/A (INVX16_LVT)                                           0.2945727706 0.0699999928 * 1.8880856186 f
+  U233/Y (INVX16_LVT)                                           0.1219405383 0.0600000024 * 1.9480856210 r
+  n293 (net)                                       2 19.1882495880 
+  U581/A1 (NAND3X0_LVT)                                         0.1221103147 0.0000000000 * 1.9480856210 r
+  U581/Y (NAND3X0_LVT)                                          0.1115121692 0.0700000525 * 2.0180856735 f
+  n910 (net)                                       1 2.8737435341 
+  clock_optgre_d_INV_124_inst_5911/A (INVX4_RVT)                0.1115121692 0.0000000000 * 2.0180856735 f
+  clock_optgre_d_INV_124_inst_5911/Y (INVX4_RVT)                0.0620903932 0.0500000119 * 2.0680856854 r
+  clock_optgre_d_INV_124_0 (net)                   3 8.8627595901 
+  clock_optctmTdsLR_1_5755/A1 (AND3X1_RVT)                      0.0620919615 0.0000000000 * 2.0680856854 r
+  clock_optctmTdsLR_1_5755/Y (AND3X1_RVT)                       0.0489722230 0.0899999142 * 2.1580855995 r
+  n84 (net)                                        1 3.0716910362 
+  clock_optctmTdsLR_2_5872/A1 (NAND3X0_RVT)                     0.0489723906 0.0000000000 * 2.1580855995 r
+  clock_optctmTdsLR_2_5872/Y (NAND3X0_RVT)                      0.0884561613 0.0699999332 * 2.2280855328 f
+  tmp_net361 (net)                                 1 1.8733016253 
+  clock_optctmTdsLR_1_5871/A (IBUFFX32_RVT)                     0.0884561613 0.0000000000 * 2.2280855328 f
+  clock_optctmTdsLR_1_5871/Y (IBUFFX32_RVT)                     0.0369585194 0.1000000238 * 2.3280855566 r
+  n818 (net)                                       2 40.7560348511 
+  clock_optctmTdsLR_1_5312/A (NBUFFX2_HVT)                      0.0400233269 0.0099999905 * 2.3380855471 r
+  clock_optctmTdsLR_1_5312/Y (NBUFFX2_HVT)                      0.1111098379 0.1300000548 * 2.4680856019 r
+  n121 (net)                                       2 18.6494960785 
+  clock_optctmTdsLR_2_5858/A (INVX0_HVT)                        0.1111318097 0.0000000000 * 2.4680856019 r
+  clock_optctmTdsLR_2_5858/Y (INVX0_HVT)                        0.0603301451 0.0599999428 * 2.5280855447 f
+  tmp_net353 (net)                                 1 0.8709254861 
+  clock_optctmTdsLR_1_5857/A2 (AND4X4_RVT)                      0.0603301451 0.0000000000 * 2.5280855447 f
+  clock_optctmTdsLR_1_5857/Y (AND4X4_RVT)                       0.0505809523 0.1700000763 * 2.6980856210 f
+  clock_optZINV_96_2 (net)                         2 17.0208492279 
+  clock_optctmTdsLR_1_5252/A1 (NAND2X1_HVT)                     0.0506527126 0.0000000000 * 2.6980856210 f
+  clock_optctmTdsLR_1_5252/Y (NAND2X1_HVT)                      0.0673408359 0.1400001049 * 2.8380857259 r
+  n541 (net)                                       1 5.1490435600 
+  priority16bit_inst_Y_regx1x/D (SDFFARX1_LVT)                  0.0673419535 0.0000000000 * 2.8380857259 r
+  data arrival time                                                                   2.8380856514
+
+  clock CLK (rise edge)                                         0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                         0.7400202751 * 2.7400202751
+  clock reconvergence pessimism                                            0.0000000000 2.7400202751
+  priority16bit_inst_Y_regx1x/CLK (SDFFARX1_LVT)                                      2.7400202751 r
+  library setup time                                                       -0.1199999973 * 2.6200202778
+  data required time                                                                  2.6200203896
+  -----------------------------------------------------------------------------------------------
+  data required time                                                                  2.6200203896
+  data arrival time                                                                   -2.8380856514
+  -----------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                    -0.2180654407
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group output
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_priority16bit
+Version: P-2019.03-SP5
+Date   : Thu Apr  6 14:42:26 2023
+****************************************
+
+
+  Startpoint: priority16bit_inst_Y_regx1x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: Y[1] (output port clocked by CLK)
+  Path Group: output
+  Path Type: max
+
+  Point                                         Fanout    Cap      Trans       Incr       Path
+  -----------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                         0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                         0.7400202751 * 0.7400202751
+  priority16bit_inst_Y_regx1x/CLK (SDFFARX1_LVT)                0.3174612224 0.0000000000 0.7400202751 r
+  priority16bit_inst_Y_regx1x/Q (SDFFARX1_LVT)                  0.0372117609 0.1800000668 * 0.9200203419 f
+  net_net_1 (net)                                  1 2.4642059803 
+  clock_optZBUF_2_inst_5195/A (NBUFFX16_RVT)                    0.0372117683 0.0000000000 * 0.9200203419 f
+  clock_optZBUF_2_inst_5195/Y (NBUFFX16_RVT)                    0.0597193129 0.0699999332 * 0.9900202751 f
+  clock_optZBUF_2_0 (net)                          1 81.0972290039 
+  U362/A (NBUFFX32_RVT)                                         0.1099868938 0.0599999428 * 1.0500202179 f
+  U362/Y (NBUFFX32_RVT)                                         0.0713750049 0.0999999046 * 1.1500201225 f
+  n918 (net)                                       2 173.8623199463 
+  placeBINV_R_95/A (INVX32_RVT)                                 0.1699303836 0.0899999142 * 1.2400200367 f
+  placeBINV_R_95/Y (INVX32_RVT)                                 0.0910777077 0.0499999523 * 1.2900199890 r
+  BUF_net_95 (net)                                 1 52.6687507629 
+  clock_optZBUF_125_inst_4696/A (NBUFFX32_RVT)                  0.1006689295 0.0299999714 * 1.3200199604 r
+  clock_optZBUF_125_inst_4696/Y (NBUFFX32_RVT)                  0.0479649939 0.0799999237 * 1.4000198841 r
+  clock_optZBUF_125_9 (net)                        1 106.2806854248 
+  clock_optZINV_47_inst_4695/A (INVX32_RVT)                     0.1669910699 0.0900000334 * 1.4900199175 r
+  clock_optZINV_47_inst_4695/Y (INVX32_RVT)                     0.0968526825 0.0299999714 * 1.5200198889 f
+  clock_optZINV_47_9 (net)                         1 84.1670532227 
+  D4I1025_E_Yx1x/DIN (D4I1025_EW)                               0.1453485191 0.0599999428 * 1.5800198317 f
+  D4I1025_E_Yx1x/PADIO (D4I1025_EW)                             2.1321468353 1.8600000143 * 3.4400198460 f
+  Y[1] (net)                                       1 3769.1469726562 
+  Y[1] (inout)                                                  2.1321468353 0.0000000000 * 3.4400198460 f
+  data arrival time                                                                   3.4400198460
+
+  clock CLK (rise edge)                                         0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                              1.2880599499 3.2880599499
+  clock reconvergence pessimism                                            0.0000000000 3.2880599499
+  output external delay                                                    -0.1199999973 3.1680599526
+  data required time                                                                  3.1680600643
+  -----------------------------------------------------------------------------------------------
+  data required time                                                                  3.1680600643
+  data arrival time                                                                   -3.4400198460
+  -----------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                    -0.2719599009
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group reg2reg
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_priority16bit
+Version: P-2019.03-SP5
+Date   : Thu Apr  6 14:42:26 2023
+****************************************
+
+
+  Startpoint: priority16bit_inst_Y_regx1x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: priority16bit_inst_Y_regx2x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Last common pin: clk
+  Path Group: reg2reg
+  Path Type: max
+
+  Point                                         Fanout    Cap      Trans       Incr       Path
+  -----------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                         0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                         0.7400202751 * 0.7400202751
+  priority16bit_inst_Y_regx1x/CLK (SDFFARX1_LVT)                0.3174612224 0.0000000000 0.7400202751 r
+  priority16bit_inst_Y_regx1x/Q (SDFFARX1_LVT)                  0.0403560288 0.1800000072 * 0.9200202823 r
+  net_net_1 (net)                                  1 2.4786179066 
+  clock_optZBUF_2_inst_5195/A (NBUFFX16_RVT)                    0.0403560326 0.0000000000 * 0.9200202823 r
+  clock_optZBUF_2_inst_5195/Y (NBUFFX16_RVT)                    0.0617057793 0.0699999928 * 0.9900202751 r
+  clock_optZBUF_2_0 (net)                          1 81.1256942749 
+  U362/A (NBUFFX32_RVT)                                         0.1109004617 0.0600000024 * 1.0500202775 r
+  U362/Y (NBUFFX32_RVT)                                         0.0719403401 0.0900000036 * 1.1400202811 r
+  n918 (net)                                       2 174.0216217041 
+  priority16bit_inst_Y_regx2x/SI (SDFFARX2_LVT)                 0.1097344086 0.0500000119 * 1.1900202930 r
+  data arrival time                                                                   1.1900203228
+
+  clock CLK (rise edge)                                         0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                         0.7400202751 * 2.7400202751
+  clock reconvergence pessimism                                            0.0000000000 2.7400202751
+  priority16bit_inst_Y_regx2x/CLK (SDFFARX2_LVT)                                      2.7400202751 r
+  library setup time                                                       -0.1400000006 * 2.6000202745
+  data required time                                                                  2.6000201702
+  -----------------------------------------------------------------------------------------------
+  data required time                                                                  2.6000201702
+  data arrival time                                                                   -1.1900203228
+  -----------------------------------------------------------------------------------------------
+  slack (MET)                                                                         1.4099999666
+
+
+1

@@ -1,0 +1,259 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group comb
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_encoder
+Version: P-2019.03-SP5
+Date   : Mon May  1 16:57:58 2023
+****************************************
+
+
+  Startpoint: test_se (input port clocked by CLK)
+  Endpoint: test_so (output port clocked by CLK)
+  Path Group: comb
+  Path Type: max
+
+  Point                               Fanout    Cap      Trans       Incr       Path
+  -------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                          0.0000000000 0.0000000000
+  clock network delay (propagated)                               0.0000000000 0.0000000000
+  input external delay                                           0.0799999982 0.0799999982 r
+  test_se (in)                                        0.2000000030 0.0000247955 & 0.0800247937 r
+  test_se (net)                          1 2507.0581054688 
+  I1025_W_test_se/PADIO (I1025_EW)                    0.2081800103 0.0000000000 * 0.0800247937 r
+  I1025_W_test_se/DOUT (I1025_EW)                     0.2771051824 0.4837603569 & 0.5637851506 r
+  hvoHier_test_se (net)                 23 88.2674560547 
+  U240/S0 (MUX21X1_HVT)                               0.2919975817 0.0399999619 * 0.6037851125 r
+  U240/Y (MUX21X1_HVT)                                0.0792695880 0.1600000858 * 0.7637851983 r
+  n341 (net)                             1 2.9108181000 
+  placeBUFT_P_23/A (NBUFFX8_HVT)                      0.0792696029 0.0000000000 * 0.7637851983 r
+  placeBUFT_P_23/Y (NBUFFX8_HVT)                      0.0740074441 0.1099998951 * 0.8737850934 r
+  BUF_net_23 (net)                       1 39.4166297913 
+  U251/A (INVX8_HVT)                                  0.0752066448 0.0099999905 * 0.8837850839 r
+  U251/Y (INVX8_HVT)                                  0.1380425096 0.0800000429 * 0.9637851268 f
+  n234 (net)                             1 71.3345260620 
+  D4I1025_W_test_so/DIN (D4I1025_EW)                  0.1513329893 0.0199999809 * 0.9837851077 f
+  D4I1025_W_test_so/PADIO (D4I1025_EW)                2.1658146381 1.8396524191 & 2.8234375268 f
+  test_so (net)                          1 3770.3181152344 
+  test_so (inout)                                     2.1691315174 0.0638549328 & 2.8872924596 f
+  data arrival time                                                         2.8872923851
+
+  clock CLK (rise edge)                                          2.0000000000 2.0000000000
+  clock network delay (propagated)                               0.0000000000 2.0000000000
+  clock reconvergence pessimism                                  0.0000000000 2.0000000000
+  output external delay                                          -0.1199999973 1.8800000027
+  data required time                                                        1.8799999952
+  -------------------------------------------------------------------------------------
+  data required time                                                        1.8799999952
+  data arrival time                                                         -2.8872923851
+  -------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                          -1.0072925091
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group inputs
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_encoder
+Version: P-2019.03-SP5
+Date   : Mon May  1 16:57:58 2023
+****************************************
+
+
+  Startpoint: test_se (input port clocked by CLK)
+  Endpoint: encoder_inst_a_new_regx7x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: inputs
+  Path Type: max
+
+  Point                                      Fanout    Cap      Trans       Incr       Path
+  --------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                                 0.0000000000 0.0000000000
+  clock network delay (propagated)                                      0.0000000000 0.0000000000
+  input external delay                                                  0.0799999982 0.0799999982 r
+  test_se (in)                                               0.2000000030 0.0000246763 & 0.0800246745 r
+  test_se (net)                                 1 2507.0581054688 
+  I1025_W_test_se/PADIO (I1025_EW)                           0.2081800103 0.0000000000 * 0.0800246745 r
+  I1025_W_test_se/DOUT (I1025_EW)                            0.2771051824 0.4837604463 & 0.5637851208 r
+  hvoHier_test_se (net)                        23 88.2674560547 
+  encoder_inst_a_new_regx7x/SE (SDFFARX1_HVT)                0.2914890945 0.0399999917 * 0.6037851125 r
+  data arrival time                                                                0.6037850976
+
+  clock CLK (rise edge)                                                 2.0000000000 2.0000000000
+  clock network delay (propagated)                                      0.5160124302 2.5160124302
+  clock reconvergence pessimism                                         0.0000000000 2.5160124302
+  encoder_inst_a_new_regx7x/CLK (SDFFARX1_HVT)                                     2.5160124302 r
+  library setup time                                                    -0.2099999934 * 2.3060124367
+  data required time                                                               2.3060123920
+  --------------------------------------------------------------------------------------------
+  data required time                                                               2.3060123920
+  data arrival time                                                                -0.6037850976
+  --------------------------------------------------------------------------------------------
+  slack (MET)                                                                      1.7022273540
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group output
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_encoder
+Version: P-2019.03-SP5
+Date   : Mon May  1 16:57:58 2023
+****************************************
+
+
+  Startpoint: encoder_inst_y_new_regx2x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: y_new[2] (output port clocked by CLK)
+  Path Group: output
+  Path Type: max
+
+  Point                                       Fanout    Cap      Trans       Incr       Path
+  ---------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                                  0.0000000000 0.0000000000
+  clock network delay (propagated)                                       0.5260124207 0.5260124207
+  encoder_inst_y_new_regx2x/CLK (SDFFARX1_HVT)                0.2845492363 0.0000000000 0.5260124207 r
+  encoder_inst_y_new_regx2x/Q (SDFFARX1_HVT)                  0.1040625945 0.3099999428 * 0.8360123634 f
+  n277 (net)                                     2 6.6867632866 
+  placeBINV_R_10/A (INVX2_HVT)                                0.1040628180 0.0000000000 * 0.8360123634 f
+  placeBINV_R_10/Y (INVX2_HVT)                                0.1026159525 0.1099998951 * 0.9460122585 r
+  BUF_net_10 (net)                               1 15.4160823822 
+  placeBINV_R_8/A (INVX0_HVT)                                 0.1026384160 0.0000000000 * 0.9460122585 r
+  placeBINV_R_8/Y (INVX0_HVT)                                 0.1375801116 0.1299998760 * 1.0760121346 f
+  BUF_net_8 (net)                                1 5.9984750748 
+  clock_optgre_mt_inst_46/A (NBUFFX2_HVT)                     0.1375804991 0.0000000000 * 1.0760121346 f
+  clock_optgre_mt_inst_46/Y (NBUFFX2_HVT)                     0.0840245113 0.1400001049 * 1.2160122395 f
+  gre_net_34 (net)                               1 10.0021228790 
+  clock_optgre_mt_inst_45/A (NBUFFX4_HVT)                     0.0840303972 0.0000000000 * 1.2160122395 f
+  clock_optgre_mt_inst_45/Y (NBUFFX4_HVT)                     0.1302880198 0.1500000954 * 1.3660123348 f
+  gre_net_33 (net)                               1 34.6752166748 
+  clock_optgre_mt_inst_42/A (NBUFFX4_HVT)                     0.1308344007 0.0099999905 * 1.3760123253 f
+  clock_optgre_mt_inst_42/Y (NBUFFX4_HVT)                     0.1297204494 0.1700000763 * 1.5460124016 f
+  gre_net_30 (net)                               1 34.4123344421 
+  clock_optgre_mt_inst_39/A (NBUFFX4_HVT)                     0.1301119328 0.0099999905 * 1.5560123920 f
+  clock_optgre_mt_inst_39/Y (NBUFFX4_HVT)                     0.0964765623 0.1500000954 * 1.7060124874 f
+  gre_net_27 (net)                               1 23.3509502411 
+  U242/A (INVX8_HVT)                                          0.0966535583 0.0000000000 * 1.7060124874 f
+  U242/Y (INVX8_HVT)                                          0.0824527591 0.0699999332 * 1.7760124207 r
+  n363 (net)                                     1 35.9463844299 
+  U241/A (IBUFFX8_HVT)                                        0.0832718760 0.0099999905 * 1.7860124111 r
+  U241/Y (IBUFFX8_HVT)                                        0.1315929294 0.1599999666 * 1.9460123777 f
+  n362 (net)                                     1 67.1719055176 
+  D4I1025_S_y_newx2x/DIN (D4I1025_NS)                         0.1416882724 0.0199999809 * 1.9660123587 f
+  D4I1025_S_y_newx2x/PADIO (D4I1025_NS)                       2.1659059525 1.8408344984 & 3.8068468571 f
+  y_new[2] (net)                                 1 3770.2131347656 
+  y_new[2] (inout)                                            2.1682441235 0.0529074669 & 3.8597543240 f
+  data arrival time                                                                 3.8597543240
+
+  clock CLK (rise edge)                                                  2.0000000000 2.0000000000
+  clock network delay (propagated)                                       0.0000000000 2.0000000000
+  clock reconvergence pessimism                                          0.0000000000 2.0000000000
+  output external delay                                                  -0.1199999973 1.8800000027
+  data required time                                                                1.8799999952
+  ---------------------------------------------------------------------------------------------
+  data required time                                                                1.8799999952
+  data arrival time                                                                 -3.8597543240
+  ---------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                  -1.9797543287
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group reg2reg
+	-transition_time
+	-capacitance
+	-sort_by slack
+Design : full_chip_encoder
+Version: P-2019.03-SP5
+Date   : Mon May  1 16:57:58 2023
+****************************************
+
+
+  Startpoint: encoder_inst_a_new_regx8x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: encoder_inst_y_new_regx3x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Last common pin: clk
+  Path Group: reg2reg
+  Path Type: max
+
+  Point                                       Fanout    Cap      Trans       Incr       Path
+  ---------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                                  0.0000000000 0.0000000000
+  clock network delay (propagated)                                       0.5260124207 0.5260124207
+  encoder_inst_a_new_regx8x/CLK (SDFFARX1_HVT)                0.2845324278 0.0000000000 0.5260124207 r
+  encoder_inst_a_new_regx8x/Q (SDFFARX1_HVT)                  0.0758119971 0.2999999523 * 0.8260123730 r
+  n293 (net)                                     2 4.7395124435 
+  U97/A (INVX0_HVT)                                           0.0758120716 0.0000000000 * 0.8260123730 r
+  U97/Y (INVX0_HVT)                                           0.0767048746 0.0800000429 * 0.9060124159 f
+  n294 (net)                                     1 2.8768711090 
+  U197/A (INVX2_HVT)                                          0.0767048970 0.0000000000 * 0.9060124159 f
+  U197/Y (INVX2_HVT)                                          0.0858121887 0.0900000334 * 0.9960124493 r
+  n351 (net)                                     5 13.2336740494 
+  U59/A4 (NOR4X1_HVT)                                         0.0858133137 0.0000000000 * 0.9960124493 r
+  U59/Y (NOR4X1_HVT)                                          0.0947378352 0.2000000477 * 1.1960124969 f
+  n315 (net)                                     2 6.3206753731 
+  U60/A4 (NAND4X0_HVT)                                        0.0947380438 0.0000000000 * 1.1960124969 f
+  U60/Y (NAND4X0_HVT)                                         0.1859530956 0.1699999571 * 1.3660124540 r
+  n247 (net)                                     2 7.1891064644 
+  U95/A4 (NOR4X1_HVT)                                         0.1859532893 0.0000000000 * 1.3660124540 r
+  U95/Y (NOR4X1_HVT)                                          0.0701005757 0.2300000191 * 1.5960124731 f
+  n295 (net)                                     2 4.2896900177 
+  U103/A2 (NAND4X0_HVT)                                       0.0701006204 0.0000000000 * 1.5960124731 f
+  U103/Y (NAND4X0_HVT)                                        0.1161095127 0.1100000143 * 1.7060124874 r
+  n84 (net)                                      1 3.8655116558 
+  U107/A2 (OA22X1_HVT)                                        0.1161095724 0.0000000000 * 1.7060124874 r
+  U107/Y (OA22X1_HVT)                                         0.0692906454 0.1699999571 * 1.8760124445 r
+  n85 (net)                                      1 3.5840270519 
+  U108/A2 (AO221X1_HVT)                                       0.0692907274 0.0000000000 * 1.8760124445 r
+  U108/Y (AO221X1_HVT)                                        0.0942328125 0.2099999189 * 2.0860123634 r
+  n94 (net)                                      3 5.0792903900 
+  U111/A1 (NAND4X0_HVT)                                       0.0942328423 0.0000000000 * 2.0860123634 r
+  U111/Y (NAND4X0_HVT)                                        0.4371716976 0.3299999237 * 2.4160122871 f
+  n275 (net)                                     1 7.5339488983 
+  encoder_inst_y_new_regx3x/D (SDFFARX1_HVT)                  0.4371719956 0.0000000000 * 2.4160122871 f
+  data arrival time                                                                 2.4160122871
+
+  clock CLK (rise edge)                                                  2.0000000000 2.0000000000
+  clock network delay (propagated)                                       0.5260124207 2.5260124207
+  clock reconvergence pessimism                                          0.0000000000 2.5260124207
+  encoder_inst_y_new_regx3x/CLK (SDFFARX1_HVT)                                      2.5260124207 r
+  library setup time                                                     -0.3100000024 * 2.2160124183
+  data required time                                                                2.2160124779
+  ---------------------------------------------------------------------------------------------
+  data required time                                                                2.2160124779
+  data arrival time                                                                 -2.4160122871
+  ---------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                  -0.1999998689
+
+
+1

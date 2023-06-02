@@ -1,0 +1,272 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group comb
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_interleaver
+Version: P-2019.03-SP5
+Date   : Sun Apr 30 11:23:33 2023
+****************************************
+
+
+  Startpoint: test_se (input port clocked by CLK)
+  Endpoint: test_so (output port clocked by CLK)
+  Path Group: comb
+  Path Type: max  (recalculated)
+
+  Point                               Fanout    Cap      Trans       Incr       Path
+  -------------------------------------------------------------------------------------
+  clock CLK (rise edge)                               0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                    1.0952700377 1.0952700377
+  input external delay                                           0.0799999982 1.1752700359 r
+  test_se (in)                                        0.2000000030 0.0000251532 & 1.1752951890 r
+  test_se (net)                          1 2510.3474121094 
+  I1025_W_test_se/PADIO (I1025_EW)                    0.2000000179 0.0199999809 * 1.1952951699 r
+  I1025_W_test_se/DOUT (I1025_EW)                     0.2095124871 0.4600000381 * 1.6552952081 r
+  hvoHier_test_se (net)                  2 34.2279205322 
+  U688/S0 (MUX21X2_LVT)                               0.2103501707 0.0099999905 * 1.6652951986 r
+  U688/Y (MUX21X2_LVT)                                0.0565616861 0.0900000334 * 1.7552952319 r
+  n888 (net)                             1 6.0466566086 
+  U377/A (INVX8_LVT)                                  0.0565617643 0.0000000000 * 1.7552952319 r
+  U377/Y (INVX8_LVT)                                  0.0330584273 0.0199999809 * 1.7752952129 f
+  n875 (net)                             1 13.5541734695 
+  U366/A (INVX16_LVT)                                 0.0330734067 0.0000000000 * 1.7752952129 f
+  U366/Y (INVX16_LVT)                                 0.0346891731 0.0199999809 * 1.7952951938 r
+  n874 (net)                             1 45.3853988647 
+  placectmTdsLR_1_572/A (INVX16_LVT)                  0.0483455062 0.0199999809 * 1.8152951747 r
+  placectmTdsLR_1_572/Y (INVX16_LVT)                  0.0379303955 0.0199999809 * 1.8352951556 f
+  n873 (net)                             1 32.0563430786 
+  D4I1025_N_test_so/DIN (D4I1025_NS)                  0.0405316278 0.0099999905 * 1.8452951461 f
+  D4I1025_N_test_so/PADIO (D4I1025_NS)                2.1315891743 1.8199999332 * 3.6652950794 f
+  test_so (net)                          1 3769.1469726562 
+  test_so (inout)                                     2.1315891743 0.0000000000 * 3.6652950794 f
+  data arrival time                                                         3.6652951241
+
+  clock CLK (rise edge)                               0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                    1.0952700377 3.0952700377
+  clock reconvergence pessimism                                  0.0000000000 3.0952700377
+  output external delay                                          -0.1199999973 2.9752700403
+  data required time                                                        2.9752700329
+  -------------------------------------------------------------------------------------
+  data required time                                                        2.9752700329
+  data arrival time                                                         -3.6652951241
+  -------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                          -0.6900250316
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group inputs
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_interleaver
+Version: P-2019.03-SP5
+Date   : Sun Apr 30 11:23:33 2023
+****************************************
+
+
+  Startpoint: rst (input port clocked by CLK)
+  Endpoint: interleaver_inst/st_regx1xx1x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: inputs
+  Path Type: max  (recalculated)
+
+  Point                                         Fanout    Cap      Trans       Incr       Path
+  -----------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                         0.0000000000 0.0000000000 0.0000000000
+  clock network delay (ideal)                                              1.0952700377 1.0952700377
+  input external delay                                                     0.0799999982 1.1752700359 r
+  rst (in)                                                      0.2000000030 0.0000250340 & 1.1752950698 r
+  rst (net)                                        1 2509.3334960938 
+  I1025_W_rst/PADIO (I1025_EW)                                  0.1999999881 0.0000000000 * 1.1752950698 r
+  I1025_W_rst/DOUT (I1025_EW)                                   0.2029738575 0.4600000381 * 1.6352951080 r
+  hvoHier_rst (net)                                9 26.5383033752 
+  U304/A (INVX0_HVT)                                            0.2034946233 0.0099999905 * 1.6452950984 r
+  U304/Y (INVX0_HVT)                                            0.1846380085 0.1900000572 * 1.8352951556 f
+  n228 (net)                                       6 7.0599098206 
+  U199/A2 (AND2X1_HVT)                                          0.1846390516 0.0000000000 * 1.8352951556 f
+  U199/Y (AND2X1_HVT)                                           0.1102376804 0.1900000572 * 2.0252952129 f
+  n194 (net)                                       5 7.1166601181 
+  U272/A1 (NAND3X4_HVT)                                         0.1102377474 0.0000000000 * 2.0252952129 f
+  U272/Y (NAND3X4_HVT)                                          0.1108224541 0.2400000095 * 2.2652952224 r
+  n124 (net)                                       9 27.8354625702 
+  U517/A (INVX0_HVT)                                            0.1111233756 0.0099999905 * 2.2752952129 r
+  U517/Y (INVX0_HVT)                                            0.0892235115 0.0999999046 * 2.3752951175 f
+  n391 (net)                                       1 2.8877980709 
+  U274/A2 (AND2X4_HVT)                                          0.0892235562 0.0000000000 * 2.3752951175 f
+  U274/Y (AND2X4_HVT)                                           0.1075305343 0.1900000572 * 2.5652951747 f
+  n618 (net)                                       8 22.8048095703 
+  U276/A6 (AO222X1_HVT)                                         0.1077113077 0.0000000000 * 2.5652951747 f
+  U276/Y (AO222X1_HVT)                                          0.0925967619 0.1600000858 * 2.7252952605 f
+  n692 (net)                                       1 5.6748023033 
+  interleaver_inst/st_regx1xx1x/D (SDFFARX1_HVT)                0.0925973877 0.0000000000 * 2.7252952605 f
+  data arrival time                                                                   2.7252953053
+
+  clock CLK (rise edge)                                         0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                         0.8668314815 2.8668314815
+  clock reconvergence pessimism                                            0.0000000000 2.8668314815
+  interleaver_inst/st_regx1xx1x/CLK (SDFFARX1_HVT)                                    2.8668314815 r
+  library setup time                                                       -0.1557988077 2.7110326737
+  data required time                                                                  2.7110326290
+  -----------------------------------------------------------------------------------------------
+  data required time                                                                  2.7110326290
+  data arrival time                                                                   -2.7252953053
+  -----------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                    -0.0142625868
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group output
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_interleaver
+Version: P-2019.03-SP5
+Date   : Sun Apr 30 11:23:33 2023
+****************************************
+
+
+  Startpoint: interleaver_inst/st_regx5xx7x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: test_so (output port clocked by CLK)
+  Path Group: output
+  Path Type: max  (recalculated)
+
+  Point                                           Fanout    Cap      Trans       Incr       Path
+  -------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                           0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                           0.8177420497 0.8177420497
+  interleaver_inst/st_regx5xx7x/CLK (SDFFARX2_LVT)                0.0646659136 0.0000000000 0.8177420497 r
+  interleaver_inst/st_regx5xx7x/QN (SDFFARX2_LVT)                 0.0777534321 0.1599250436 & 0.9776670933 r
+  n878 (net)                                         1 12.3030729294 
+  U688/A2 (MUX21X2_LVT)                                           0.0777692050 0.0000000000 * 0.9776670933 r
+  U688/Y (MUX21X2_LVT)                                            0.0483391918 0.0900000334 * 1.0676671267 r
+  n888 (net)                                         1 6.0466566086 
+  U377/A (INVX8_LVT)                                              0.0483392850 0.0000000000 * 1.0676671267 r
+  U377/Y (INVX8_LVT)                                              0.0302419960 0.0199999809 * 1.0876671076 f
+  n875 (net)                                         1 13.5541734695 
+  U366/A (INVX16_LVT)                                             0.0302583706 0.0000000000 * 1.0876671076 f
+  U366/Y (INVX16_LVT)                                             0.0332119353 0.0199999809 * 1.1076670885 r
+  n874 (net)                                         1 45.3853988647 
+  placectmTdsLR_1_572/A (INVX16_LVT)                              0.0473039597 0.0199999809 * 1.1276670694 r
+  placectmTdsLR_1_572/Y (INVX16_LVT)                              0.0375144146 0.0199999809 * 1.1476670504 f
+  n873 (net)                                         1 32.0563430786 
+  D4I1025_N_test_so/DIN (D4I1025_NS)                              0.0401481315 0.0099999905 * 1.1576670408 f
+  D4I1025_N_test_so/PADIO (D4I1025_NS)                            2.1315870285 1.8200000525 * 2.9776670933 f
+  test_so (net)                                      1 3769.1469726562 
+  test_so (inout)                                                 2.1315870285 0.0000000000 * 2.9776670933 f
+  data arrival time                                                                     2.9776670933
+
+  clock CLK (rise edge)                                           0.0000000000 2.0000000000 2.0000000000
+  clock network delay (ideal)                                                1.0952700377 3.0952700377
+  clock reconvergence pessimism                                              0.0000000000 3.0952700377
+  output external delay                                                      -0.1199999973 2.9752700403
+  data required time                                                                    2.9752700329
+  -------------------------------------------------------------------------------------------------
+  data required time                                                                    2.9752700329
+  data arrival time                                                                     -2.9776670933
+  -------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                      -0.0023970529
+
+
+1
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-input_pins
+	-nets
+	-max_paths 1
+	-group reg2reg
+	-transition_time
+	-capacitance
+	-pba_mode path
+	-sort_by slack
+Design : full_chip_interleaver
+Version: P-2019.03-SP5
+Date   : Sun Apr 30 11:23:33 2023
+****************************************
+
+
+  Startpoint: interleaver_inst/i_regx2x
+               (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: interleaver_inst/out_reg
+               (rising edge-triggered flip-flop clocked by CLK)
+  Last common pin: clk
+  Path Group: reg2reg
+  Path Type: max  (recalculated)
+
+  Point                                       Fanout    Cap      Trans       Incr       Path
+  ---------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.0000000000 0.0000000000 0.0000000000
+  clock network delay (propagated)                                       0.8177420497 0.8177420497
+  interleaver_inst/i_regx2x/CLK (SDFFARX2_HVT)                0.0646659434 0.0000000000 0.8177420497 r
+  interleaver_inst/i_regx2x/Q (SDFFARX2_HVT)                  0.1121715009 0.3658834100 & 1.1836254597 r
+  n609 (net)                                    12 16.3739376068 
+  U376/A (INVX1_RVT)                                          0.1124957278 0.0000000000 * 1.1836254597 r
+  U376/Y (INVX1_RVT)                                          0.1003312618 0.0900000334 * 1.2736254930 f
+  n250 (net)                                     6 7.4331350327 
+  U224/A1 (NAND3X4_HVT)                                       0.1003342122 0.0000000000 * 1.2736254930 f
+  U224/Y (NAND3X4_HVT)                                        0.1233961731 0.2500000000 * 1.5236254930 r
+  n617 (net)                                    15 33.9426498413 
+  U577/A (INVX0_HVT)                                          0.1235358343 0.0000000000 * 1.5236254930 r
+  U577/Y (INVX0_HVT)                                          0.1606891602 0.1599999666 * 1.6836254597 f
+  n451 (net)                                     3 7.1510925293 
+  U319/A1 (AOI22X1_HVT)                                       0.1606893837 0.0000000000 * 1.6836254597 f
+  U319/Y (AOI22X1_HVT)                                        0.0581974015 0.2100000381 * 1.8936254978 r
+  n151 (net)                                     1 4.2015295029 
+  U321/A3 (NAND4X0_HVT)                                       0.0581977293 0.0000000000 * 1.8936254978 r
+  U321/Y (NAND4X0_HVT)                                        0.3014838099 0.2599999905 * 2.1536254883 f
+  n633 (net)                                     1 4.8081216812 
+  U327/A2 (OA22X1_HVT)                                        0.3014838696 0.0000000000 * 2.1536254883 f
+  U327/Y (OA22X1_HVT)                                         0.0703633875 0.1900000572 * 2.3436255455 f
+  n160 (net)                                     1 1.3303749561 
+  clock_optctmTdsLR_1_3400/A1 (MUX21X1_HVT)                   0.0703633875 0.0000000000 * 2.3436255455 f
+  clock_optctmTdsLR_1_3400/Y (MUX21X1_HVT)                    0.0840701684 0.1700000763 * 2.5136256218 f
+  n195 (net)                                     1 3.6296129227 
+  U352/A1 (AO22X1_HVT)                                        0.0840703174 0.0000000000 * 2.5136256218 f
+  U352/Y (AO22X1_HVT)                                         0.0516370125 0.1400001049 * 2.6536257267 f
+  n893 (net)                                     1 2.4977800846 
+  U353/A6 (AO222X1_HVT)                                       0.0516370572 0.0000000000 * 2.6536257267 f
+  U353/Y (AO222X1_HVT)                                        0.0467662849 0.0999999046 * 2.7536256313 f
+  n680 (net)                                     1 1.8576844931 
+  interleaver_inst/out_reg/D (SDFFARX2_LVT)                   0.0467663035 0.0000000000 * 2.7536256313 f
+  data arrival time                                                                 2.7536256313
+
+  clock CLK (rise edge)                                       0.0000000000 2.0000000000 2.0000000000
+  clock network delay (propagated)                                       0.7772790194 2.7772790194
+  clock reconvergence pessimism                                          0.0000000000 2.7772790194
+  interleaver_inst/out_reg/CLK (SDFFARX2_LVT)                                       2.7772790194 r
+  library setup time                                                     -0.0973904729 2.6798885465
+  data required time                                                                2.6798884869
+  ---------------------------------------------------------------------------------------------
+  data required time                                                                2.6798884869
+  data arrival time                                                                 -2.7536256313
+  ---------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                  -0.0737370849
+
+
+1
