@@ -1,7 +1,7 @@
 # Prediction PBA Slack values from GBA Slack values using Machine Learning Regressor Algorithm
 ## Directory Structure <br />
 ```bash
-├── fifo_bkp
+├── RTL2GDSScripts
 │   ├── Tcl scripts - RTL2GDS flow
 ├── run.sh
 ├── FinalCodeBase
@@ -23,6 +23,8 @@
 │       └── (Files - training the ML model)
 │   └── PBA
 │       └── (Files - training the ML model)
+├── README.txt
+├── README.md
 ```
 ## Abstract
 Static Timing Analysis (STA) is necessary for digital design to verify timing and ensure proper operation of integrated circuits (IC), especially as IC designs become increasingly complex with millions or billions of transistors on a single chip.  STA can be done in two ways: Path-Based Analysis (PBA) and Graph-Based Analysis (GBA). PBA is very accurate but takes longer, whereas GBA is faster but less accurate. The aim is to obtain PBA slack results with GBA runtime. In this paper, we propose a Machine Learning (ML) model which can predict PBA slack values from GBA slack using Random Forests. 
@@ -114,8 +116,94 @@ In order to tune hyperparameters that aid in improving the performance of the mo
 
 ![image](https://github.com/abelmathew98/PBA-GBA/assets/50398012/004a475c-afec-493b-a7c4-74727aa60692)
 
+The following is a concise definition for the hyperparameters that are tuned. n_est is the number of trees, min_sample_split is the minimum number of data points allowed in a node before splitting, min_sample_leaf is the minimum number of data points allowed in a leaf node, max_features is the maximum number of features considered when splitting a node, and max_depth is the maximum number of levels in each decision tree.
+
+The final set of hyperparameter configuration was n_est as 400, min_sample_split as 4 , min_sample_leaf as 1 ,max_features as auto and max_depth of 80. A detailed analysis of the variation in MSE for these 6 sets of hyper parameter configuration is provided in the results section.
 
 
+### Data Fitting and Prediction
+Once the model is set up with the right hyperparameters, the data extracted from the GBA/PBA files are fit into the model. A testing set is used to evaluate the model and if it is below the threshold of the expected MSE, the model is saved for future predictions. Three separate models are created for prediction PBA slack for the paths inputs, outputs and reg2reg, respectively.
 
+## STAGE 3: PBA SLACK PREDICTION 
+<p align="center">
+  <img width="580" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/1b4d509c-00d8-41fc-ad56-47ea66147811">
+  <br />
+</p>
 
+### GBA File Parser
+Another GBA report is generated after an RTL2GDS flow and fed as an input to the file parser to extract the features required (X_TestData) for predicting PBA slack values.
+
+### Model Selection And Prediction
+The corresponding model for prediction is chosen based on the path group for which PBA slack is expected (except for the combinational path). To ensure accuracy, the predicted value is compared to the actual value from the PBA file.
+
+## ISSUES FACED
+As the timing files needed to be generated for each design, the RTL2GDS flow had to be done for all designs. As this is a time-consuming process, we were not able to run as many designs as we expected. Also, since each design needs its own customization, there were issues during different stages of the flow.
+
+## Results
+### Hyper Parameter vs. MSE 
+The different sets of hyperparameters mentioned in the implementation section are matched against the average MSE values corresponding to it over 5 runs. These are run for the reg2reg PBA slack prediction model. There are possibilities where one set might be better than the other when run, but we have decided to go with the best one we’ve got. These are best-case scenarios for the model shown in Figure below.
+
+<p align="center">
+  <img width="840" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/28659230-9e6b-4a48-b1de-7f5482a76e6f">
+</p>
+
+### Ablation Study
+In total, there are 10 features that are taken into consideration when extracting from the PBA/GBA reports. The model is trained and tested by removing one feature at a time. In general, an ablation study is a set of experiments in which components of a machine learning system are removed/replaced in order to measure the impact of these components on the performance of the system. This is to check the independency of each feature from predicting the PBA slack. To rephrase, we  seek out which features are not required for training. The MSE values in each instance is as shown in the graph below. For ease of representation, we are using the Hyper parameter set 6 (n_estimators = 400, min_samples_split=4, max_features =auto, min_samples_leaf=1, max_depth=80). Through this analysis, it becomes a little bit more clear about which features are selected during the feature selection process. The average of over 100 model Training MSE values is represented in the gigure below. We are omitting the analysis where there are two features removed from the feature list since it is a little bit more complicated to represent and run due to the number of possible combinations.
+
+<p align="center">
+  <img width="840" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/9f4a558c-7644-4326-9a61-a39afe638d5e">
+</p>
+
+The smaller value in this analysis would mean that the feature is closer to independence from predicting the PBA Slack value. Hence, we removed RequiredTime and SumFO from the dataframe that is passed onto training the model.
+
+### Scatter Plot for different models
+Another metric used to analyze the model's efficiency is visually observing the scatter plot of the three models. The following three figures show the scatter plot accumulated for models with less than 0.15 MSE value for each path group model. This is, as mentioned before, the best possible case. The closer the values are to the x=y part of the graph, the better the prediction model.
+
+<p align="center">
+<img width="840" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/0c179d91-388b-499c-9019-e3d119225fca">
+</p>
+
+<p align="center">
+<img width="840" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/deef5a30-501e-4d66-9d66-f3e22404021b">
+</p>
+
+<p align="center">
+  <img width="840" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/72b55238-0228-46a3-af1f-3c5a02f5fa71">
+</p>
+
+The output from the code for the open-source design [9], PIPO, is shown in the figure below.
+<p align="center">
+<img width="734" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/2e9760dd-8908-45f4-938b-2791b8fbe6c0">
+</p>
+
+The high deviation in the predicted slack is due to low number of PBA-GBA reports used for training. The expectation was to have a deviation of less than 15%, and only reg2reg path slack is within that range. In most cases, it is required to find a less pessimistic value for the reg2reg path, we can say that the main goal of the project is achieved.  Only one design’s PBA slack value for the different paths is predicted because the other 19 are used for training the model.
+
+## Future Work
+The lack of data sets and the quality of the designs for which PBA/GBA slack was obtained is one of the main features of the project to be improved. The PBA-GBA deviation for most of the designs that we have used is in the range of 10-18 seconds. But in most of the industry-based designs, the PBA-GBA deviation is around 10-15ps which is around 1000 times larger than the use case we had in the project. 
+
+In terms of future work, we would like to do the following: -
+  1.	Increase the size of the dataset used for training the model
+  2.	Increase the PBA-GBA divergence of the designs used for training the model
+      a.	This would mean that we could move towards using designs that have at least 200k gates and flops.
+  3.	Write an ML model from scratch with neural networks in order to customize the hyperparameters at a neural network level. 
+
+## Conclusion
+With this project, we are proposing an ML-based solution to address the PBA-GBA runtime accuracy issue in STA. An ML model was developed using Random Forest Regressor and trained with open source and proprietary designs of our classmates. We have used Synopsys 32nm Free PDK and the Synopsys tools Design Compiler, IC Compiler II, and PrimeTime to implement the designs. We have used a total of 20 designs (19+1), and the model predictions have a best-case PBA slack value of 5.63% MSE. Since we did not have enough datasets to train, the divergence is more. In the future, we would like to train the model with more designs to reach the desired accuracy of <15% MSE. This can help avoid overdesigning and make use of the small design margin for the latest designs.
+
+## Reference
+
+[1].	 A. B. Kahng, U. Mallappa and L. Saul, "Using Machine Learning to Predict Path- Based Slack from Graph-Based Timing Analysis," 2018 IEEE 36th International Conference on Computer Design (ICCD), Orlando, FL, USA, 2018, pp. 603-612, doi: 10.1109/ICCD.2018.00096. 
+[2].	A. B. Kahng, S. Kang, H. Lee, S. Nath and J. Wadhwani, "Learning-based approx- imation of interconnect delay and slew in signoff timing tools," 2013 ACM/IEEE International Workshop on System Level Interconnect Prediction (SLIP), Austin, TX, USA, 2013, pp. 1-8, doi: 10.1109/SLIP.2013.6681682. 
+[3].	T. -w. Huang and M. D. F. Wong, "On fast timing closure: speeding up incremental path-based timing analysis with mapreduce," 2015 ACM/IEEE International Work- shop on System Level Interconnect Prediction (SLIP), San Francisco, CA, USA, 2015, pp. 1-6, doi: 10.1109/SLIP.2015.7171710. 
+[4].	J. Bhasker and R. Chadha, (2011) Static timing analysis for nanometer designs: A practical approach. New York: Springer. [5] PrimeTime U-2022.12 User Guide and Documentation Available: https://www.solvnet.synopsys.com/ [Accessed March 1, 2023] 
+[5].	Synopsys Inc. Available: https://www.synopsys.com/ [Accessed March 1, 2023] 
+[6].	OpenCores. Available: https://opencores.org/ [Accessed March 1, 2023] 
+[7].	R. Molina, “EDA Vendors Should Improve The Runtime Performance Of Path-Based Analysis”, Electronic Design, May 10, 2013. [Online], Available: https://www.electronicdesign.com/technologies/eda/article/21796368/eda- vendors-should-improve-the-runtime-performance-of-pathbased-analysis [Accessed March 1, 2023] 
+[8].	Hyperparameter Tuning the Random Forest in Python using Scikit. Available: 
+https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74/ [Accessed May 10, 2023]
+[9].	GitHub. Available: https://www.github.com/ [Accessed May 10, 2023]
+
+## Colleague/Collaborator/Advisor Information
+Advisor :  Prof. Sachin S Sapatnekar ,University of Minnesota
+Colleague/Collaborator : Sreelakshmi Pramila Devi Vinod (vinod11@umn.edu)
 
