@@ -54,11 +54,68 @@ During the preliminary stages, one of the hardest parts was figuring out what fe
 <br />
 
 ## Implementation 
-<!-- <p align="center"> -->
-  <img width="477" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/77f83952-213a-47ff-99b6-bfd0f802dafd">
+<p align="center">
+  <img width="527" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/77f83952-213a-47ff-99b6-bfd0f802dafd">
   <br />
-<!-- </p> -->
-<br />
-### Stage1 : FILE PARSING and DATA EXTRACTION 
+</p>
+
+## STAGE 1 : FILE PARSING and DATA EXTRACTION 
+<p align="center">
+  <img width="427" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/7a74608e-5d82-409b-98b8-ac1bcaebcb8d">
+  <br />
+</p>
+
+### RTL2GDS Flow and Generating PBA/GBA Files
+Since we had to run the full flow to obtain the timing reports, we chose to automate the flow. Starting with Synthesis in Synopsys Design Compiler (DC), the flow goes on to floor planning with IC Compiler II (ICC2) and then comes back to DC for the topological run for better optimization. Then Place and Route are done with ICC2 before moving on to STA with PrimeTime. A tcsh shell script was created to run from synthesis to STA, which can be reused by changing only the design name.
+
+### Required Fields.json
+This file consists of all the fields that are required to be extracted from the PBA/GBA reports that are generated.
+
+### File Parser
+Within the Python script, the fileparser function extracts fields from PBA/GBA reports per the specifications mentioned in the 'requiredFields.json' file. The extraction process is executed by implementing a switch case equivalent to a state machine. The 'parameters.json' file stores the paths leading to the segregated PBA and GBA files of different designs. The hold timing files and combination paths did not produce significant divergence in the PBA-GBA slack values, so we have ignored it. Therefore, the resulting output of this function is then written into three CSV files: ' reg2regmaxdf.csv', 'inputsmaxdf.csv', and 'outputsmaxdf.csv'. These CSV files contain the cumulative data extracted from each file, which will be employed for model training and testing. This extracted data serves as input for our program's second stage, Model Training.
+
+## STAGE 2: MODEL TRAINING
+<p align="center">
+  <img width="610" alt="image" src="https://github.com/abelmathew98/PBA-GBA/assets/50398012/8c60fad0-0149-46d0-8685-54002ebe4517">
+  <br />
+</p>
+
+### Data Cleaning
+In model training, it is common to discard fields deemed unnecessary, such as the name of the design from which the data was extracted. The feature selection technique used during model training identifies the specific fields to be eliminated. This iterative method typically involves a cycle of data cleaning and feature selection that continues until the model's best set of features is identified.
+
+Feature Selection
+The following features were the main consideration for the prediction model.
+1. Violated: This field depicts if the timing report has a slack violation or not; True if there is a slack violation and false if there is none.
+2.PathLength: The length of the path from the start point and endpoint described at the start of the timing file for the particular path group(inputs, outputs, or reg2reg).
+3.SumCap: This field consists of the sum of the capacitance that the path has at each point of consideration.
+4. SumFO: This field consists of the sum of the path's fanout at each point of consideration.
+5. RVTCount: Total Number of RVT cells in the path that is being considered.
+6. LVTCount: Total Number of LVT cells in the path that is being considered.
+7. HVTCount: Total Number of HVT cells in the path that is being considered.
+8. GBASlack: GBA Slack value from the each design’s gba_setup.rpt file
+9. arrivalTime: arrivalTime value from the each design’s gba_setup.rpt file
+10. requiredTime: requiredTime value from the each design’s gba_setup.rpt file
+
+The PBASlack value from each design’s pba_setup.rpt file is used as the label, which is the expected output for our model.
+
+### Feature/Label Split
+A feature in machine learning is a measurable attribute of the data that acts as an input variable for predicting or classifying an outcome. Features distinguish one data point from another and are essential for developing reliable models. Conversely, a label is the output variable that the model tries to estimate or classify based on the input features. The label indicates the target value the model is attempting to predict, and its precision is crucial for assessing its performance.
+
+### Train/Test Split
+The train/test split divides the data set into two sections: training and testing. A training set trains the model, and a test set evaluates its performance. This approach seeks to predict output for a fresh set of inputs from the testing set that was previously unknown to the model. It is important to emphasize that the train/test split should be assigned at random to minimize bias in the model's performance rating. The proportion of data utilized for training and testing can vary depending on the size of the dataset. We used an 80:20 split for a set of 20 GBA/PBA files.
+
+### Regression Model 
+Regression models are a type of supervised learning that helps in recognizing patterns and making predictions from labelled examples. It requires a dataset with known outcomes to train the model and test its accuracy.  The accuracy of the model is estimated using Mean Squared Error (MSE) and scatter plot to observe the linearity between the predicted value and the actual value.
+
+After careful consideration and observation of other regression models such as Linear and Logistics, we have concluded that Random Forest Regressor(RFR)  is the most suitable regression algorithm for predicting PBA slack values. RFR is an ML algorithm that predicts by combining multiple decision trees. One of the key benefits of RFR is that the usage of multiple trees improves the algorithm's stability and minimizes the variance associated with the prediction. A drawback of RFR is its tendency to overfit.
+
+### Hyper Parameters Tuning
+In order to tune hyperparameters that aid in improving the performance of the model, a module present in the sci-kit-learn library in Python called RandomizedSearchCV is used.  It usually points toward the optimal set of hyperparameters for the model through a search conducted over a randomized set of hyper parameters rather than an exhaustive search of all possible combinations of hyper parameters. Table 2 below shows the five possible set of hyper parameters that could be used for the model.
+
+![image](https://github.com/abelmathew98/PBA-GBA/assets/50398012/004a475c-afec-493b-a7c4-74727aa60692)
+
+
+
+
 
 
