@@ -193,17 +193,27 @@ With this project, we are proposing an ML-based solution to address the PBA-GBA 
 ## Reference
 
 [1].	 A. B. Kahng, U. Mallappa and L. Saul, "Using Machine Learning to Predict Path- Based Slack from Graph-Based Timing Analysis," 2018 IEEE 36th International Conference on Computer Design (ICCD), Orlando, FL, USA, 2018, pp. 603-612, doi: 10.1109/ICCD.2018.00096. 
+<br />
 [2].	A. B. Kahng, S. Kang, H. Lee, S. Nath and J. Wadhwani, "Learning-based approx- imation of interconnect delay and slew in signoff timing tools," 2013 ACM/IEEE International Workshop on System Level Interconnect Prediction (SLIP), Austin, TX, USA, 2013, pp. 1-8, doi: 10.1109/SLIP.2013.6681682. 
+<br />
 [3].	T. -w. Huang and M. D. F. Wong, "On fast timing closure: speeding up incremental path-based timing analysis with mapreduce," 2015 ACM/IEEE International Work- shop on System Level Interconnect Prediction (SLIP), San Francisco, CA, USA, 2015, pp. 1-6, doi: 10.1109/SLIP.2015.7171710. 
+<br />
 [4].	J. Bhasker and R. Chadha, (2011) Static timing analysis for nanometer designs: A practical approach. New York: Springer. [5] PrimeTime U-2022.12 User Guide and Documentation Available: https://www.solvnet.synopsys.com/ [Accessed March 1, 2023] 
+<br />
 [5].	Synopsys Inc. Available: https://www.synopsys.com/ [Accessed March 1, 2023] 
+<br />
 [6].	OpenCores. Available: https://opencores.org/ [Accessed March 1, 2023] 
+<br />
 [7].	R. Molina, “EDA Vendors Should Improve The Runtime Performance Of Path-Based Analysis”, Electronic Design, May 10, 2013. [Online], Available: https://www.electronicdesign.com/technologies/eda/article/21796368/eda- vendors-should-improve-the-runtime-performance-of-pathbased-analysis [Accessed March 1, 2023] 
+<br />
 [8].	Hyperparameter Tuning the Random Forest in Python using Scikit. Available: 
 https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74/ [Accessed May 10, 2023]
+<br />
 [9].	GitHub. Available: https://www.github.com/ [Accessed May 10, 2023]
 
 ## Colleague/Collaborator/Advisor Information
 Advisor :  Prof. Sachin S Sapatnekar ,University of Minnesota
+<br />
 Colleague/Collaborator : Sreelakshmi Pramila Devi Vinod (vinod11@umn.edu)
+<br />
 
